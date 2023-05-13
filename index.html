@@ -10,9 +10,15 @@
 <body>
     <main class="main" id="main">
         <div class="cont-arrows">
-            <button class="arrow-left" id="arrow-left">&#8592;</button>
-            <button class="arrow-rigth" id="arrow-rigth">&#8594;</button>
-            <button class="arrow-configuration" id="arrow-configuration">Configuraciones<br>&#8744;</button>
+            <button class="arrow-left" id="arrow-left">&#8678;</button>
+            <button class="arrow-rigth" id="arrow-rigth">&#8680;</button>
+            <button class="arrow-configuration" id="arrow-configuration">Preferencias<p class="arrow-config" id="arrow-config">&#8744;</p></button>
+            <button class="arrow-configuration2" id="arrow-configuration2"><p class="arrow-config2" id="arrow-config2">&#8743;</p>Ocultar</button>
+            <button class="arrow-bottom" id="arrow-bottom"><p id="arrow-bottom-p">&#8743;</p>Multiplicacion</button>
+            <button class="arrow-top" id="arrow-top">Suma<p>&#8744;</p></button>
+            <button class="arrow2-left" id="arrow2-left">Resta<p>&#62;</p></button>
+            <button class="arrow2-rigth" id="arrow2-rigth">División<p>&#60;</p></button>
+            <button class="icon-setting" id="icon-setting"><img src="./assets/img/icons8-ajustes.svg" alt="preferencias"></button>
         </div>
 
         <div class="cont-present" id="cont-present">
@@ -225,7 +231,7 @@
         </div>
 
         <div class="cont-configuration" id="cont-configuration">
-            <h2>Configuración</h2>
+            <h2>Preferencias</h2>
             <div class="cont-dark-mode">
                 <label>Modo Oscuro</label>
                 <input type="checkbox" id="btn-dark-mode" class="switch-input">
@@ -242,6 +248,12 @@
                 <label>Animaciones</label>
                 <input type="checkbox" id="btn-animations" class="switch-input">
                 <label for="btn-animations" class="switch-label"></label>
+            </div>
+
+            <div class="cont-box-float">
+                <label>Caja flotante</label>
+                <input type="checkbox" id="btn-box-float" class="switch-input">
+                <label for="btn-box-float" class="switch-label"></label>
             </div>
 
             <div class="cont-transitions">

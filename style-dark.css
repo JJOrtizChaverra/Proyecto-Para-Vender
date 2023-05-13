@@ -56,10 +56,10 @@ body {
     box-shadow: -15px 15px 20px 20px rgb(82, 82, 82);
     overflow: hidden;
     transition: all 1s;
-    animation: float 3s ease 0s infinite normal;
+    animation: none;
 }
 
-/* @keyframes float {
+@keyframes float {
     0% {
         transform: translateX(0px);
     }
@@ -71,7 +71,7 @@ body {
         transform: translateY(0px);
     }
 
-} */
+}
 
 .cont-present {
     display: flex;
@@ -119,20 +119,20 @@ body {
     display: none;
     position: absolute;
     align-self: flex-start;
-    font-size: 50px;
+    font-size: 70px;
     width: max-content;
     height: max-content;
     background: none;
     border: none;
     cursor: pointer;
     transition: all 1s;
-    color: rgb(255, 255, 255);
     z-index: 1;
-    /* animation: move2 3s ease 0s infinite normal; */
+    color: rgb(255, 255, 255);
+    animation: none;
 }
 
 .arrow-left:hover {
-    font-size: 60px;
+    font-size: 80px;
     transform: translateX(5px);
 }
 
@@ -151,7 +151,7 @@ body {
 .arrow-rigth {
     position: absolute;
     align-self: flex-end;
-    font-size:  50px;
+    font-size:  70px;
     width: max-content;
     height: max-content;
     background: none;
@@ -160,11 +160,11 @@ body {
     transition: all 1s;
     color: rgb(255, 255, 255);
     z-index: 1;
-    /* animation: move 3s ease 0s infinite normal; */
+    animation: none;
 }
 
 .arrow-rigth:hover {
-    font-size: 60px;
+    font-size: 80px;
     transform: translateX(-5px);
 }
 
@@ -191,16 +191,27 @@ body {
     border: none;
     cursor: pointer;
     transition: all 1s;
+    color: rgb(255, 255, 255);
     z-index: 1;
     font-family: cursive;
     transition: all 1s, opacity 0.5s;
-    color: rgb(255, 255, 255);
-    /* animation: move3 3s ease 0s infinite normal; */
 }
 
-.arrow-configuration:hover {
-    font-size: 20px;
-    transform: translateY(5px);
+.arrow-config {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: absolute;
+    width: 110px;
+    height: 50px;
+    top: 0;
+    right: 0.5px;
+    animation: none;
+    transition: all 1s;
+}
+
+.arrow-config:hover {
+    transform: translateY(-7px);
 }
 
 @keyframes move3 {
@@ -208,13 +219,59 @@ body {
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(10px);
+        transform: translateY(-8px);
     }
     100% {
         transform: translateY(0px);
     }
 }
 
+.arrow-configuration2 {
+    display: none;
+    position: absolute;
+    top: 23px;
+    font-size: 17px;
+    font-weight: 900;
+    width: max-content;
+    height: max-content;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 1s;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+    font-family: cursive;
+    transition: all 1s, opacity 0.5s;
+}
+
+.arrow-config2 {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: absolute;
+    top: -24px;
+    right: -19px;
+    width: 110px;
+    height: 47px;
+    animation: none;
+    transition: all 1s;
+}
+
+.arrow-config2:hover {
+    transform: translateY(7px);
+}
+
+@keyframes move4 {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
 /* SUMA */
 
 .cont-suma {
@@ -452,10 +509,8 @@ body {
 /* CONFIGURACIONES */
 
 .cont-configuration {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     position: absolute;
     background-color: rgb(51, 51, 51);
     width: 75%;
@@ -464,7 +519,7 @@ body {
     border-radius: 30px;
     border-bottom-left-radius: 60px;
     border-top-right-radius: 60px;
-    box-shadow: -10px 10px 10px 7px rgb(77, 77, 77);
+    box-shadow: none;
     transform: translateY(-500px);
     transition: all 1s, transform 2s;
 }
@@ -475,6 +530,8 @@ body {
 }
 
 .cont-configuration h2 {
+    grid-column: 1/3;
+    justify-self: center;
     font-size: 30px;
     margin-bottom: -5px;
 }
@@ -486,7 +543,7 @@ body {
 
 .cont-configuration div {
     padding: 0;
-    margin-left: 35px;
+    margin-left: 50px;
 }
 
 .switch-label {
