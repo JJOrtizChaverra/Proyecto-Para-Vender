@@ -9,16 +9,22 @@ const contResta = document.getElementById("cont-resta");
 const contMultiplicacion = document.getElementById("cont-multiplicacion");
 const contDivision = document.getElementById("cont-division");
 
-const main = document.getElementsByTagName("main");
-const Inputs = document.input
-const body = document.body
+const link = document.getElementById("link");
+const main = document.getElementById("main");
+const buttons = document.getElementsByTagName("button");
+const inputs = document.getElementsByTagName("input")
 
 const buttonDarkMode = document.getElementById("btn-dark-mode");
+const buttonShadows = document.getElementById("btn-shadows");
+const buttonAnimations = document.getElementById("btn-animations");
 
 let acumArrowLeft = 1;
 let acumArrowRigth = 1;
 let acumArrowConfiguration = 1;
 let acumbuttonDarkMode = 1;
+let acumbuttonShadows = 1;
+let acumbuttonAnimations = 1;
+let acumDisplayArrow = 0;
 
 arrowConfiguration.addEventListener ("click", function() {
 
@@ -31,6 +37,8 @@ arrowConfiguration.addEventListener ("click", function() {
             contMultiplicacion.style.opacity = '0';
             contDivision.style.opacity = '0';
             arrowConfiguration.style.opacity = '0';
+            arrowLeft.style.display = "none";
+            arrowRigth.style.display = "none";
             acumArrowConfiguration++
             setTimeout(function() {
                 arrowConfiguration.innerHTML = '&#8743;<br>Ocultar';
@@ -46,6 +54,14 @@ arrowConfiguration.addEventListener ("click", function() {
             contMultiplicacion.style.opacity = '1';
             contDivision.style.opacity = '1';
             arrowConfiguration.style.opacity = '0';
+
+            if (acumDisplayArrow == 0) {
+                arrowRigth.style.display = "block";
+            } else {
+                arrowLeft.style.display = "block";
+                arrowRigth.style.display = "block";
+            }
+
             acumArrowConfiguration--;
             setTimeout(function() {
                 arrowConfiguration.innerHTML = 'Configuraciones<br>&#8744;';
@@ -60,8 +76,67 @@ buttonDarkMode.addEventListener("click", function() {
     
     switch(acumbuttonDarkMode) {
         case 1:
-            body.style.backgroundColor = "rgb(41, 41, 41)";
-            main.style.backgroundColor = "rgb(41, 41, 41)";
+            link.href = "./style-dark.css";
+            acumbuttonDarkMode++;
+            break;
+
+        case 2:
+            link.href = "./style.css"
+            acumbuttonDarkMode--;
+    }
+
+})
+
+buttonShadows.addEventListener("click", function() {
+    
+    switch(acumbuttonShadows) {
+        case 1:
+            main.style.boxShadow = "0px 0px 0px 0px rgb(65, 65, 65)";
+            contConfiguration.style.boxShadow = "none";
+            contPresent.style.boxShadow = "none";
+            contSuma.style.boxShadow = "none";
+            contResta.style.boxShadow = "none";
+            contMultiplicacion.style.boxShadow = "none";
+            contDivision.style.boxShadow = "none";
+            
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].style.boxShadow = "none";
+                inputs[i].style.boxShadow = "none";
+            }
+            acumbuttonShadows++;
+            break;
+
+        case 2:
+            main.style.boxShadow = "-15px 15px 20px 20px rgb(65, 65, 65)";
+            contConfiguration.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+            contPresent.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+            contSuma.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+            contResta.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+            contMultiplicacion.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+            contDivision.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+
+            for (var i = 0; i < buttons.length; i++) {
+
+                if (i >= 3) {
+                    buttons[i].style.boxShadow = "-3px 3px 5px 1px rgb(65, 65, 65)";
+                }
+                inputs[i].style.boxShadow = "-3px 3px 5px 1px rgb(65, 65, 65)";
+            }
+            
+            acumbuttonShadows--;
+
+    }
+
+})
+
+buttonAnimations.addEventListener ("click", function(){
+    
+    switch(acumbuttonAnimations) {
+        case 1:
+            main.style.animation = "float 3s ease 0s infinite normal";
+            arrowLeft.style.animation = "move2 3s ease 0s infinite normal";
+            arrowRigth.style.animation = "move 3s ease 0s infinite normal";
+            // arrowConfiguration.style.animation = "move3 3s ease-in-out 0s infinite normal";
     }
 
 })
@@ -76,10 +151,11 @@ arrowRigth.addEventListener ("click", function(){
             contSuma.style.opacity = '1';
             arrowLeft.style.display = "block";
             acumArrowRigth++;
+            acumDisplayArrow++
 
             if (acumArrowLeft == 2) {
                 acumArrowLeft--;
-            }
+            } 
             break;
 
         case 2:
@@ -89,6 +165,7 @@ arrowRigth.addEventListener ("click", function(){
             contResta.style.opacity = '1';
             acumArrowRigth++;
             acumArrowLeft++;
+            acumDisplayArrow++;
             break;
 
         case 3:
@@ -98,6 +175,7 @@ arrowRigth.addEventListener ("click", function(){
             contMultiplicacion.style.opacity = '1';
             acumArrowRigth++;
             acumArrowLeft++;
+            acumDisplayArrow++;
             break;
 
         case 4:
@@ -108,6 +186,7 @@ arrowRigth.addEventListener ("click", function(){
             arrowRigth.style.display = "none";
             acumArrowRigth++;
             acumArrowLeft++;
+            acumDisplayArrow++;
             break;
     }
 
@@ -124,6 +203,7 @@ arrowLeft.addEventListener ("click", function(){
             arrowLeft.style.display = "none";
             acumArrowLeft++;
             acumArrowRigth--;
+            acumDisplayArrow--;
             break;
 
         case 2:
@@ -133,6 +213,7 @@ arrowLeft.addEventListener ("click", function(){
             contResta.style.opacity = '0';
             acumArrowLeft--;
             acumArrowRigth--;
+            acumDisplayArrow--;
             break;
 
         case 3:
@@ -142,6 +223,7 @@ arrowLeft.addEventListener ("click", function(){
             contMultiplicacion.style.opacity = '0';
             acumArrowLeft--;
             acumArrowRigth--;
+            acumDisplayArrow--;
             break;
 
         case 4:
@@ -152,6 +234,7 @@ arrowLeft.addEventListener ("click", function(){
             arrowRigth.style.display = "block";
             acumArrowLeft--;
             acumArrowRigth--;
+            acumDisplayArrow--;
             break;
 
     }
