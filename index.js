@@ -17,9 +17,13 @@ const main = document.getElementById("main");
 const buttons = document.getElementsByTagName("button");
 const inputs = document.getElementsByTagName("input")
 const divs = document.getElementsByTagName("div");
-const arrowBottomP = document.getElementById("arrow-bottom-p");
+const arrowBottom2 = document.getElementById("arrow-bottom2");
+const arrowTop2 = document.getElementById("arrow-top2");
+const arrow2Left2 = document.getElementById("arrow2-left2");
+const arrow2Rigth2 = document.getElementById("arrow2-rigth2");
 
 const iconSetting = document.getElementById("icon-setting");
+const iconSetting2 = document.getElementById("icon-setting2");
 const arrowBottom = document.getElementById("arrow-bottom");
 const arrowTop = document.getElementById("arrow-top");
 const arrow2Left = document.getElementById("arrow2-left");
@@ -44,6 +48,7 @@ let acumArrowTop = 1;
 let acumArrowBottom = 1;
 let acumArrow2Left = 1;
 let acumArrow2Rigth = 1;
+let acumButtonConfiguration = 1;
 let acumDisplayArrow = 0;
 
 arrowConfiguration.addEventListener ("click", function() {
@@ -57,15 +62,23 @@ arrowConfiguration.addEventListener ("click", function() {
         contResta.style.opacity = '0';
         contMultiplicacion.style.opacity = '0';
         contDivision.style.opacity = '0';
-        arrowLeft.style.display = "none";
-        arrowRigth.style.display = "none";
+        arrowLeft.style.transform = "translateX(-200px)";
+        arrowRigth.style.transform = "translateX(200px)";
         arrowConfiguration.style.opacity = '0';
-        arrowConfiguration2.style.display = "block";
         arrowConfiguration2.style.opacity = '0';
 
+        if (acumbuttonAnimations == 2) {
+            arrowLeft.style.animation = "none";
+            arrowRigth.style.animation = "none";
+        }
+
         setTimeout(function() {
-            arrowConfiguration2.style.opacity = "1";
-        }, 1500);
+            arrowConfiguration2.style.display = "block";
+
+            setTimeout(() => {
+                arrowConfiguration2.style.opacity = "1";
+            }, 100);
+        }, 1400);
 
     } else {
         
@@ -75,16 +88,18 @@ arrowConfiguration.addEventListener ("click", function() {
         contResta.style.opacity = '0';
         contMultiplicacion.style.opacity = '0';
         contDivision.style.opacity = '0';
-        arrowLeft.style.display = "none";
-        arrowRigth.style.display = "none";
+        arrowLeft.style.transform = "translateX(-200px)";
+        arrowRigth.style.transform = "translateX(200px)";
         arrowConfiguration.style.display = "none"
         arrowConfiguration2.style.display = "block";
         arrowConfiguration2.style.opacity = '1';
 
-
-        
+        if (acumbuttonAnimations == 2) {
+            arrowLeft.style.animation = "none";
+            arrowRigth.style.animation = "none";
+        }
     }
-    
+    acumButtonConfiguration = 1;
 })
 
 arrowConfiguration2.addEventListener ("click", function() {
@@ -97,16 +112,42 @@ arrowConfiguration2.addEventListener ("click", function() {
         contResta.style.opacity = '1';
         contMultiplicacion.style.opacity = '1';
         contDivision.style.opacity = '1';
-        arrowConfiguration.style.display = "block";
         arrowConfiguration.style.opacity = '0';
-        arrowConfiguration2.style.opacity = '0';
+        arrowConfiguration2.style.display = 'none';            
+
+        
+        if (acumDisplayArrow == 0) {
+            arrowRigth.style.transform = "translateX(0)";
+            if (acumbuttonAnimations == 2) {
+            
+                setTimeout(() => {
+                    arrowLeft.style.animation = "move2 3s ease 0s infinite normal";
+                    arrowRigth.style.animation = "move 3s ease 0s infinite normal";
+                }, 900);
+            }
+        } else {
+            arrowLeft.style.transform = "translateX(0)";
+            arrowRigth.style.transform = "translateX(0)";
+            if (acumbuttonAnimations == 2) {
+            
+                setTimeout(() => {
+                    arrowLeft.style.animation = "move2 3s ease 0s infinite normal";
+                    arrowRigth.style.animation = "move 3s ease 0s infinite normal";
+                }, 900);
+            }
+        }
 
         setTimeout(function() {
-            arrowConfiguration.style.opacity = '1';
-            arrowConfiguration2.style.display ="none";
-        }, 1000)
+            arrowConfiguration.style.display = "block";
+            
+            setTimeout(() => {
+                arrowConfiguration.style.opacity = '1';
+            }, 100);
+
+        }, 900)
 
     } else {
+        arrowLeft.style.transform = "translateX(0)";
         contConfiguration.style.transform = "translateY(-500px)";
         contPresent.style.opacity = '1';
         contSuma.style.opacity = '1';
@@ -117,17 +158,24 @@ arrowConfiguration2.addEventListener ("click", function() {
         arrowConfiguration.style.opacity = '1';
         arrowConfiguration2.style.display = "none"
         arrowConfiguration2.style.opacity = '0';
+
+        if (acumDisplayArrow == 0) {
+            arrowRigth.style.transform = "translateX(0)";
+            if (acumbuttonAnimations == 2) {
+                arrowLeft.style.animation = "move2 3s ease 0s infinite normal";
+                arrowRigth.style.animation = "move 3s ease 0s infinite normal";
+        }
+        } else {
+            arrowLeft.style.transform = "translateX(0)";
+            arrowRigth.style.transform = "translateX(0)";
+            if (acumbuttonAnimations == 2) {
+                arrowLeft.style.animation = "move2 3s ease 0s infinite normal";
+                arrowRigth.style.animation = "move 3s ease 0s infinite normal";
+            }
+        }
+
     }
-
-    
-
-    if (acumDisplayArrow == 0) {
-        arrowRigth.style.display = "block";
-    } else {
-        arrowLeft.style.display = "block";
-        arrowRigth.style.display = "block";
-    }
-
+    acumButtonConfiguration = 1;
 })
 
 buttonDarkMode.addEventListener("click", function() {
@@ -162,6 +210,9 @@ buttonShadows.addEventListener("click", function() {
                 if (i >= 4) {
                     buttons[i].style.boxShadow = "-3px 3px 5px 1px rgb(65, 65, 65)";
                 }
+            }
+
+            for (var i = 0; i < inputs.length; i++) {
                 inputs[i].style.boxShadow = "-3px 3px 5px 1px rgb(65, 65, 65)";
             }
             
@@ -169,7 +220,7 @@ buttonShadows.addEventListener("click", function() {
             break;
 
         case 2:
-            main.style.boxShadow = "0px 0px 0px 0px rgb(65, 65, 65)";
+            main.style.boxShadow = "none";
             contConfiguration.style.boxShadow = "none";
             contPresent.style.boxShadow = "none";
             contSuma.style.boxShadow = "none";
@@ -178,7 +229,13 @@ buttonShadows.addEventListener("click", function() {
             contDivision.style.boxShadow = "none";
             
             for (var i = 0; i < buttons.length; i++) {
-                buttons[i].style.boxShadow = "none";
+
+                if (i >= 4) {
+                    buttons[i].style.boxShadow = "none";
+                }
+            }
+
+            for (var i = 0; i < inputs.length; i++) {
                 inputs[i].style.boxShadow = "none";
             }
             acumbuttonShadows--;
@@ -208,18 +265,25 @@ buttonAnimations.addEventListener ("click", function(){
     
     switch(acumbuttonAnimations) {
         case 1:
-            arrowLeft.style.animation = "move2 3s ease 0s infinite normal";
-            arrowRigth.style.animation = "move 3s ease 0s infinite normal";       
+
             arrowConfig1.style.animation = "move3 3s ease 0s infinite normal";
             arrowConfig2.style.animation = "move4 3s ease 0s infinite normal";
+            iconSetting2.style.animation = "rotateIcon 2s ease 0s infinite normal";
+            arrowBottom2.style.animation = "move6 3s ease 0s infinite normal";
+            arrowTop2.style.animation = "move4 3s ease 0s infinite normal";
+            arrow2Left2.style.animation = "move5 3s ease 0s infinite normal";
+            arrow2Rigth2.style.animation = "move7 3s ease 0s infinite normal";
             acumbuttonAnimations++;
             break;
 
-        case 2:
-            arrowLeft.style.animation = "none";
-            arrowRigth.style.animation = "none";       
+        case 2:  
             arrowConfig1.style.animation = "none";
             arrowConfig2.style.animation = "none";
+            iconSetting2.style.animation = "none";
+            arrowBottom2.style.animation = "none";
+            arrowTop2.style.animation = "none";
+            arrow2Left2.style.animation = "none";
+            arrow2Rigth2.style.animation = "none";
             acumbuttonAnimations--;
             break;
     }
@@ -234,6 +298,7 @@ buttonTransitios.addEventListener ("click", function() {
                 divs[i].style.transition = "all 1s, transform 2s, opacity 1.5s";
             }
 
+            main.style.transition = "all 1s";
             arrowLeft.style.transition = "all 1s";
             arrowRigth.style.transition = "all 1s";
             arrowConfig1.style.transition = "all 1s"
@@ -242,6 +307,15 @@ buttonTransitios.addEventListener ("click", function() {
             arrowBottom.style.transition = "all 1s";
             arrow2Left.style.transition = "all 1s";
             arrow2rigth.style.transition = "all 1s";
+
+            arrowTop2.style.transition = "all 1s";
+            arrowBottom2.style.transition = "all 1s";
+            arrow2Left2.style.transition = "all 1s";
+            arrow2Rigth2.style.transition = "all 1s";
+
+            arrowConfiguration.style.transition = "all 1s";
+            arrowConfiguration2.style.transition = "all 1s";
+            iconSetting2.style.transition = "all 1s";
 
             acumButtonTransitions++;
             break;
@@ -255,6 +329,19 @@ buttonTransitios.addEventListener ("click", function() {
         arrowRigth.style.transition = "none";
         arrowConfig1.style.transition = "none"
         arrowConfig2.style.transition = "none"
+        arrowTop.style.transition = "none";
+        arrowBottom.style.transition = "none";
+        arrow2Left.style.transition = "none";
+        arrow2rigth.style.transition = "none";
+
+        arrowTop2.style.transition = "none";
+        arrowBottom2.style.transition = "none";
+        arrow2Left2.style.transition = "none";
+        arrow2Rigth2.style.transition = "none";
+
+        arrowConfiguration.style.transition = "none";
+        arrowConfiguration2.style.transition = "none";
+        iconSetting2.style.transition = "none";
 
         acumButtonTransitions--;
         break;
@@ -269,20 +356,65 @@ buttonModoXeY.addEventListener ("click", function(){
 
     switch (acumbuttonModoXeY) {
         case 1:
-        iconSetting.style.display = "block";
+
+        if (acumButtonTransitions == 1) {
+            contPresent.style.transform = "translateX(0)";
+            arrowConfig1.style.display = "none";
+            arrowConfiguration.style.display = "none";
+            arrowConfiguration2.style.transform = "translateX(400px)";
+            arrowConfiguration2.style.opacity = "0";
+            iconSetting.style.display = "block";
+            iconSetting.style.opacity = '0';
+
+            arrowConfiguration2.style.display = "none";
+            iconSetting.style.opacity = '1';
+
+            contConfiguration.style.transform = "translateY(-500px)"
+            contPresent.style.opacity = "1";
+            arrowLeft.style.transform = "translateX(-200px)";
+            arrowRigth.style.transform = "translateX(200px)";
+
+        
+            arrowBottom.style.transform = "translateY(0)";
+            arrowTop.style.transform = "translateY(0)";
+            arrow2Left.style.transform = "translateX(0)";
+            arrow2rigth.style.transform = "translateX(0)"
+        
+
+            contSuma.style.transform = "translateX(0)"
+            contSuma.style.transform = "translateY(-500px)";
+            contResta.style.transform = "translateX(-900px)";
+            contMultiplicacion.style.transform = "translateX(500px)";
+            contMultiplicacion.style.transform = "translateY(500px)";
+            contDivision.style.transform = "translateX(900px)";
+
+        } else {
+            contPresent.style.transform = "translateX(0)";
         arrowConfig1.style.display = "none";
-        arrowConfig2.style.display = "none";
-        arrowConfiguration.style.display = "none"
-        arrowConfiguration2.style.display = "none"
+        arrowConfiguration.style.display = "none";
+        arrowConfiguration2.style.transform = "translateX(400px)";
+        arrowConfiguration2.style.opacity = "0";
+        iconSetting.style.display = "block";
+        iconSetting.style.opacity = '0';
+        
+        setTimeout(() => {
+            arrowConfiguration2.style.display = "none";
+            iconSetting.style.opacity = '1';
+        }, 700);
 
         contConfiguration.style.transform = "translateY(-500px)"
         contPresent.style.opacity = "1";
-        arrowLeft.style.display = "none";
-        arrowRigth.style.display = "none";
-        arrowBottom.style.display = "block";
-        arrowTop.style.display = "block";
-        arrow2Left.style.display = "block";
-        arrow2rigth.style.display = "block";
+        arrowLeft.style.transform = "translateX(-200px)";
+        arrowRigth.style.transform = "translateX(200px)";
+
+        
+
+        setTimeout (function(){
+            arrowBottom.style.transform = "translateY(0)";
+            arrowTop.style.transform = "translateY(0)";
+            arrow2Left.style.transform = "translateX(0)";
+            arrow2rigth.style.transform = "translateX(0)"
+        }, 400)
 
         contSuma.style.transform = "translateX(0)"
         contSuma.style.transform = "translateY(-500px)";
@@ -290,6 +422,74 @@ buttonModoXeY.addEventListener ("click", function(){
         contMultiplicacion.style.transform = "translateX(500px)";
         contMultiplicacion.style.transform = "translateY(500px)";
         contDivision.style.transform = "translateX(900px)";
+        }
+        acumbuttonModoXeY++;
+        break;
+
+        case 2:
+            contPresent.style.opacity = "1";
+            contConfiguration.style.transform = "translateY(-500px)";
+
+            arrowConfiguration2.style.transform = "translateX(0)";
+            arrowConfiguration2.style.opacity = '1';
+            arrowConfiguration.style.display = "block";
+            arrowConfiguration.style.opacity = '1';
+            arrowConfig1.style.display = "flex";
+
+            arrowBottom.style.transform = "translateY(200px)";
+            arrowTop.style.transform = "translateY(-200px)";
+            arrow2Left.style.transform = "translateX(-200px)";
+            arrow2rigth.style.transform = "translateX(200px)"
+
+            arrowRigth.style.transform = "translateX(0)";
+
+            contSuma.style.transform = "translateX(1000px)"
+            contSuma.style.transform = "translateX(1000px)";
+            contResta.style.transform = "translateX(1000px)";
+            contMultiplicacion.style.transform = "translateX(1000px)";
+            contMultiplicacion.style.transform = "translateX(1000px)";
+            contDivision.style.transform = "translateX(1000px)";
+
+            if (acumArrowRigth == 4) {
+                arrowRigth.style.transform = "translateX(0)";
+                
+            } else {
+                arrowRigth.style.display = "block"
+                arrowRigth.style.transform = "translateX(200px)";
+
+                setTimeout(() => {
+                    arrowRigth.style.transform = "translateX(0)";
+                }, 200);
+            }
+
+            if (acumButtonTransitions == 1) {
+                if (acumbuttonAnimations == 2) {
+                    arrowLeft.style.animation = "move2 3s ease 0s infinite normal";
+                    arrowRigth.style.animation = "move 3s ease 0s infinite normal";
+                }
+            }
+
+            if (acumbuttonAnimations == 2) {
+            
+                setTimeout(() => {
+                    arrowLeft.style.animation = "move2 3s ease 0s infinite normal";
+                    arrowRigth.style.animation = "move 3s ease 0s infinite normal";
+                }, 1100);
+            } 
+
+            acumArrowRigth = 1;
+            acumArrowLeft = 1;
+
+            arrowLeft.style.display = "none";
+
+            iconSetting.style.opacity = '0';
+            setTimeout(() => {
+                iconSetting.style.display = "none";
+            }, 1500);
+
+            acumbuttonModoXeY--;
+
+            break;
     }
 
 })
@@ -298,39 +498,103 @@ arrowTop.addEventListener("click", function(){
 
     switch (acumArrowTop) {
         case 1:
-            contPresent.style.opacity = '0';
-            contSuma.style.opacity = '1';
-            contSuma.style.transform = "translateY(0)";
-            arrowTop.style.transform = "translateY(-200px)";
 
-            arrow2Left.style.transform = "translateX(-200px)"
-            arrow2rigth.style.transform = "translateX(200px)"
-            arrowBottom.style.transform = "translateY(200px)"
+            if (acumButtonTransitions == 1) {
 
-            setTimeout (function(){
-                arrowTop.innerHTML = 'Inicio<p>&#8744;</p>';
-                arrowTop.style.transform = "translatey(0)";
-            }, 1000)
-            acumArrowTop++;
+                iconSetting.style.display = "none";
+
+                contPresent.style.opacity = '0';
+                contSuma.style.opacity = '1';
+                contSuma.style.transform = "translateY(0)";
+                arrowTop.style.transform = "translateY(-200px)";
+
+                arrow2Left.style.transform = "translateX(-200px)"
+                arrow2rigth.style.transform = "translateX(200px)"
+                arrowBottom.style.transform = "translateY(200px)"
+
+            
+                arrowTop.style.transform = "translateY(0)"
+                arrowTop.innerHTML = 'Inicio<p id="arrow-top2">&#8744;</p>';
+                arrowTop.style.opacity = "1";
+
+                
+            
+                acumArrowTop++;
+
+            } else {
+                contPresent.style.opacity = '0';
+                contSuma.style.opacity = '1';
+                contSuma.style.transform = "translateY(0)";
+                arrowTop.style.transform = "translateY(-200px)";
+
+                iconSetting.style.opacity = '0';
+                iconSetting.style.cursor = "default";
+
+                setTimeout(() => {
+                    iconSetting.style.display = "none";
+                }, 1000);
+
+                arrow2Left.style.transform = "translateX(-200px)"
+                arrow2rigth.style.transform = "translateX(200px)"
+                arrowBottom.style.transform = "translateY(200px)"
+
+                setTimeout (function(){
+                    arrowTop.style.transform = "translateY(0)"
+                    arrowTop.innerHTML = 'Inicio<p id="arrow-top2">&#8744;</p>';
+                    arrowTop.style.opacity = "1";
+                }, 1000)
+                acumArrowTop++;
+            }
+
+            
             break;
 
         case 2:
-            contPresent.style.opacity = '1';
-            contSuma.style.opacity = '0';
-            contSuma.style.transform = "translateY(-500px)";
-            arrowTop.style.transform = "translateY(-200px)";
+            if (acumButtonTransitions == 1) {
+                contPresent.style.opacity = '1';
+                contSuma.style.opacity = '0';
+                contSuma.style.transform = "translateY(-500px)";
+                arrowTop.style.transform = "translateY(-200px)"
 
-            arrow2Left.style.transform = "translateX(0)"
-            arrow2rigth.style.transform = "translateX(0)"
-            arrowBottom.style.transform = "translateY(0)"
+                iconSetting.style.display = "block";
+
+                arrow2Left.style.transform = "translateX(0)"
+                arrow2rigth.style.transform = "translateX(0)"
+                arrowBottom.style.transform = "translateY(0)"
             
-            setTimeout (function (){
                 arrowTop.innerHTML = 'Suma<p>&#8744;</p>';
                 arrowTop.style.transform = "translateY(0)";
-            }, 310)
+
+                acumArrowTop--;
+
+            } else {
+                contPresent.style.opacity = '1';
+                contSuma.style.opacity = '0';
+                contSuma.style.transform = "translateY(-500px)";
+                arrowTop.style.transform = "translateY(-200px)"
+
+                iconSetting.style.display = "block";
+                iconSetting.style.opacity = '0';
+
+
+                setTimeout(() => {
+                    iconSetting.style.opacity = '1';
+                    iconSetting.style.cursor = "pointer";
+                }, 100);
+
+                arrow2Left.style.transform = "translateX(0)"
+                arrow2rigth.style.transform = "translateX(0)"
+                arrowBottom.style.transform = "translateY(0)"
+            
+                setTimeout (function (){
+                    arrowTop.innerHTML = 'Suma<p>&#8744;</p>';
+                    arrowTop.style.transform = "translateY(0)";
+                }, 310)
+
+                acumArrowTop--;
+            }
 
             
-            acumArrowTop--;
             break;
 
     }
@@ -342,41 +606,97 @@ arrow2Left.addEventListener ("click", function(){
     switch (acumArrow2Left) {
         case 1:
 
-        contPresent.style.opacity = '0';
-        contResta.style.opacity = '1';
-        contResta.style.transform = "translateX(0)";
-        arrow2Left.style.opacity = '0'
-        arrow2Left.style.display = "block"
+        if (acumButtonTransitions == 1) {
 
-        arrowTop.style.transform = "translateY(-200px)"
-        arrow2rigth.style.transform = "translateX(200px)"
-        arrowBottom.style.transform = "translateY(200px)"
+            contPresent.style.opacity = '0';
+            contResta.style.opacity = '1';
+            contResta.style.transform = "translateX(0)";
+            arrow2Left.style.transform = "translateX(-200px)";
 
-        setTimeout (function(){
+            iconSetting.style.display = "none";
+    
+            arrowTop.style.transform = "translateY(-200px)"
+            arrow2rigth.style.transform = "translateX(200px)"
+            arrowBottom.style.transform = "translateY(200px)"
+    
+            
             arrow2Left.innerHTML = 'Inicio<p>&#62;</p>';
-            arrow2Left.style.opacity = '1';
-        }, 1500)
+            arrow2Left.style.transform = "translateX(0)";
+            
 
-        acumArrow2Left++;
+            acumArrow2Left++;
+        } else {
+            contPresent.style.opacity = '0';
+            contResta.style.opacity = '1';
+            contResta.style.transform = "translateX(0)";
+            arrow2Left.style.transform = "translateX(-200px)";
+    
+            iconSetting.style.opacity = '0';
+            iconSetting.style.cursor = "default";
+
+            setTimeout(() => {
+                iconSetting.style.display = "none";
+            }, 1000);
+
+            arrowTop.style.transform = "translateY(-200px)"
+            arrow2rigth.style.transform = "translateX(200px)"
+            arrowBottom.style.transform = "translateY(200px)"
+    
+            setTimeout (function(){
+                arrow2Left.innerHTML = 'Inicio<p>&#62;</p>';
+                arrow2Left.style.transform = "translateX(0)";
+            }, 1000)
+
+            acumArrow2Left++;
+        }
         break;
 
         case 2:
-            contPresent.style.opacity = '1';
-            contResta.style.opacity = '0';
-            contResta.style.transform = "translateX(-900px)";
-            arrow2Left.style.opacity = '0'
-            arrow2Left.style.display = "block"
+            if (acumButtonTransitions == 1) {
+                contPresent.style.opacity = '1';
+                contResta.style.opacity = '0';
+                contResta.style.transform = "translateX(-900px)";
+                arrow2Left.style.transform = "translateX(-200px)";
 
-            arrowTop.style.transform = "translateY(0)"
-            arrow2rigth.style.transform = "translateX(0)"
-            arrowBottom.style.transform = "translateY(0)"
+                iconSetting.style.display = "block";
 
-            setTimeout (function(){
+                arrowTop.style.transform = "translateY(0)"
+                arrow2rigth.style.transform = "translateX(0)"
+                arrowBottom.style.transform = "translateY(0)"
+
+                
                 arrow2Left.innerHTML = 'Resta<p>&#62;</p>';
-                arrow2Left.style.opacity = '1';
-            }, 1500)
+                arrow2Left.style.transform = "translateX(0)";
+                
 
-            acumArrow2Left--;
+                acumArrow2Left--;
+             
+            } else {
+                contPresent.style.opacity = '1';
+                contResta.style.opacity = '0';
+                contResta.style.transform = "translateX(-900px)";
+                arrow2Left.style.transform = "translateX(-200px)";
+
+                arrowTop.style.transform = "translateY(0)"
+                arrow2rigth.style.transform = "translateX(0)"
+                arrowBottom.style.transform = "translateY(0)"
+
+                iconSetting.style.display = "block";
+                iconSetting.style.opacity = '0';
+
+
+                setTimeout(() => {
+                    iconSetting.style.opacity = '1';
+                    iconSetting.style.cursor = "pointer";
+                }, 100);
+
+                setTimeout (function(){
+                    arrow2Left.innerHTML = 'Resta<p>&#62;</p>';
+                    arrow2Left.style.transform = "translateX(0)";
+                }, 330)
+
+                acumArrow2Left--;
+            }
             break;
     }
 
@@ -386,45 +706,314 @@ arrowBottom.addEventListener ("click", function(){
 
     switch (acumArrowBottom) {
         case 1:
-            contPresent.style.opacity = '0';
-            contMultiplicacion.style.opacity = '1';
-            contMultiplicacion.style.transform = "translateY(0)";
-            arrowBottom.style.opacity = '0'
-            arrowBottom.style.display = "block"
+
+            if (acumButtonTransitions == 1) {
+                contPresent.style.opacity = '0';
+                contMultiplicacion.style.opacity = '1';
+                contMultiplicacion.style.transform = "translateY(0)";
+                arrowBottom.style.transform = "translateY(200px)";
+
+                iconSetting.style.display = "none";
             
 
-            arrowTop.style.transform = "translateY(-200px)"
-            arrow2rigth.style.transform = "translateX(200px)"
-            arrow2Left.style.transform = "translateX(-200px)"
+                arrowTop.style.transform = "translateY(-200px)"
+                arrow2rigth.style.transform = "translateX(200px)"
+                arrow2Left.style.transform = "translateX(-200px)"
 
-            setTimeout (function(){
+            
                 arrowBottom.innerHTML = '<p id="arrow-bottom-p">&#8743;</p>Inicio';
-                arrowBottom.style.opacity = '1';
-            }, 1500)
+                arrowBottom.style.transform = "translateY(0)";
+            
 
-            acumArrowBottom++;
+                acumArrowBottom++;
+
+            } else {
+                contPresent.style.opacity = '0';
+                contMultiplicacion.style.opacity = '1';
+                contMultiplicacion.style.transform = "translateY(0)";
+                arrowBottom.style.transform = "translateY(200px)";
+            
+                iconSetting.style.opacity = '0';
+                iconSetting.style.cursor = "default";
+
+                setTimeout(() => {
+                    iconSetting.style.display = "none";
+                }, 1000);
+
+                arrowTop.style.transform = "translateY(-200px)"
+                arrow2rigth.style.transform = "translateX(200px)"
+                arrow2Left.style.transform = "translateX(-200px)"
+
+                setTimeout (function(){
+                    arrowBottom.innerHTML = '<p id="arrow-bottom-p">&#8743;</p>Inicio';
+                    arrowBottom.style.transform = "translateY(0)";
+                }, 1000)
+
+                acumArrowBottom++;
+            }
             break;
 
         case 2:
-            contPresent.style.opacity = '1';
-            contMultiplicacion.style.opacity = '0';
-            contMultiplicacion.style.transform = "translateY(500px)";
-            arrowBottom.style.opacity = '0'
-            arrowBottom.style.display = "block"
 
-            arrowTop.style.transform = "translateY(0)"
-            arrow2rigth.style.transform = "translateX(0)"
-            arrow2Left.style.transform = "translateX(0)"
+            if (acumButtonTransitions == 1) {
+                contPresent.style.opacity = '1';
+                contMultiplicacion.style.opacity = '0';
+                contMultiplicacion.style.transform = "translateY(500px)";
+                arrowBottom.style.transform = "translateY(200px)";
 
-            setTimeout (function(){
+                iconSetting.style.display = "block";
+
+                arrowTop.style.transform = "translateY(0)"
+                arrow2rigth.style.transform = "translateX(0)"
+                arrow2Left.style.transform = "translateX(0)"
+
+                
                 arrowBottom.innerHTML = '<p>&#8743;</p>Multiplicacion';
-                arrowBottom.style.opacity = '1';
-            }, 1000)
+                arrowBottom.style.transform = "translateY(0)";
+                
 
-            acumArrowBottom--;
+                acumArrowBottom--;
+            } else {
+                contPresent.style.opacity = '1';
+                contMultiplicacion.style.opacity = '0';
+                contMultiplicacion.style.transform = "translateY(500px)";
+                arrowBottom.style.transform = "translateY(200px)";
+
+                arrowTop.style.transform = "translateY(0)"
+                arrow2rigth.style.transform = "translateX(0)"
+                arrow2Left.style.transform = "translateX(0)"
+
+                iconSetting.style.display = "block";
+                iconSetting.style.opacity = '0';
+
+
+                setTimeout(() => {
+                    iconSetting.style.opacity = '1';
+                    iconSetting.style.cursor = "pointer";
+                }, 100);
+
+                setTimeout (function(){
+                    arrowBottom.innerHTML = '<p>&#8743;</p>Multiplicacion';
+                    arrowBottom.style.transform = "translateY(0)";
+                }, 320)
+
+                acumArrowBottom--;
+            }
+
             break;
     }
 
+})
+
+arrow2rigth.addEventListener ("click", function(){
+
+    switch (acumArrow2Rigth) {
+        case 1:
+
+            if (acumButtonTransitions == 1) {
+                contPresent.style.opacity = '0';
+                contDivision.style.opacity = '1';
+                contDivision.style.transform = "translateX(0)";
+                arrow2rigth.style.transform = "translateX(200px)";
+
+                iconSetting.style.display = "none";
+
+                arrowTop.style.transform = "translateY(-200px)"
+                arrow2Left.style.transform = "translateX(-200px)"
+                arrowBottom.style.transform = "translateY(200px)"
+
+            
+                arrow2rigth.innerHTML = 'Inicio<p>&#60;</p>';
+                arrow2rigth.style.transform = "translateX(0)";
+            
+
+                acumArrow2Rigth++;
+
+            } else {
+                contPresent.style.opacity = '0';
+                contDivision.style.opacity = '1';
+                contDivision.style.transform = "translateX(0)";
+                arrow2rigth.style.transform = "translateX(200px)";
+
+                arrowTop.style.transform = "translateY(-200px)"
+                arrow2Left.style.transform = "translateX(-200px)"
+                arrowBottom.style.transform = "translateY(200px)"
+
+                iconSetting.style.opacity = '0';
+                iconSetting.style.cursor = "default";
+
+                setTimeout(() => {
+                    iconSetting.style.display = "none";
+                }, 1000);
+
+
+                setTimeout (function(){
+                    arrow2rigth.innerHTML = 'Inicio<p>&#60;</p>';
+                    arrow2rigth.style.transform = "translateX(0)";
+                }, 1000)
+
+                acumArrow2Rigth++;
+            }
+
+            
+        break;
+
+        case 2:
+
+            if (acumButtonTransitions == 1) {
+                contPresent.style.opacity = '1';
+                contDivision.style.opacity = '0';
+                contDivision.style.transform = "translateX(900px)";
+                arrow2rigth.style.transform = "translateX(200px)"
+
+                iconSetting.style.display = "block";
+
+                arrowTop.style.transform = "translateY(0)"
+                arrow2Left.style.transform = "translateX(0)"
+                arrowBottom.style.transform = "translateY(0)"
+
+                    arrow2rigth.innerHTML = 'Division<p>&#60;</p>';
+                    arrow2rigth.style.transform = "translateX(0)";
+                
+
+                acumArrow2Rigth--;
+
+            } else {
+                contPresent.style.opacity = '1';
+                contDivision.style.opacity = '0';
+                contDivision.style.transform = "translateX(900px)";
+                arrow2rigth.style.transform = "translateX(200px)"
+
+                arrowTop.style.transform = "translateY(0)"
+                arrow2Left.style.transform = "translateX(0)"
+                arrowBottom.style.transform = "translateY(0)"
+
+                iconSetting.style.display = "block";
+                iconSetting.style.opacity = '0';
+
+
+                setTimeout(() => {
+                    iconSetting.style.opacity = '1';
+                    iconSetting.style.cursor = "pointer";
+                }, 100);
+
+                setTimeout (function(){
+                    arrow2rigth.innerHTML = 'Division<p>&#60;</p>';
+                    arrow2rigth.style.transform = "translateX(0)";
+                }, 340)
+
+                acumArrow2Rigth--;
+            }
+            break;
+    }
+
+})
+
+iconSetting.addEventListener ("click", function(){
+
+    switch (acumButtonConfiguration) {
+        case 1:
+
+            if (acumButtonTransitions == 2) {
+                contConfiguration.style.transform = "translateY(0)";
+                contPresent.style.opacity = "0";
+                
+                contSuma.style.opacity = '0';
+                contResta.style.opacity = '0';
+                contMultiplicacion.style.opacity = '0';
+                contDivision.style.opacity = '0';
+
+                arrowTop.style.transform = "translateY(-200px)";
+                arrowBottom.style.transform = "translateY(200px)";
+                arrow2Left.style.transform = "translateX(-200px)";
+                arrow2rigth.style.transform = "translateX(200px)";
+        
+                if (acumbuttonAnimations == 2) {
+                    
+                }
+        
+                setTimeout(function() {
+                    
+        
+                    setTimeout(() => {
+                        
+                    }, 100);
+                }, 1400);
+                acumButtonConfiguration++;
+        
+            } else {
+                contConfiguration.style.transform = "translateY(0)";
+                contPresent.style.opacity = "0";
+                
+                contSuma.style.opacity = '0';
+                contResta.style.opacity = '0';
+                contMultiplicacion.style.opacity = '0';
+                contDivision.style.opacity = '0';
+
+                arrowTop.style.transform = "translateY(-200px)";
+                arrowBottom.style.transform = "translateY(200px)";
+                arrow2Left.style.transform = "translateX(-200px)";
+                arrow2rigth.style.transform = "translateX(200px)";
+               
+                if (acumbuttonAnimations == 2) {
+                    
+                }
+                acumButtonConfiguration++;
+            }
+
+            break;
+
+        case 2:
+            if (acumButtonTransitions == 2) {
+                contConfiguration.style.transform = "translateY(-500px)";
+                contPresent.style.opacity = "1";
+        
+                contSuma.style.opacity = '0';
+                contResta.style.opacity = '0';
+                contMultiplicacion.style.opacity = '0';
+                contDivision.style.opacity = '0';
+
+                arrowTop.style.transform = "translateY(0)";
+                arrowBottom.style.transform = "translateY(0)";
+                arrow2Left.style.transform = "translateX(0)";
+                arrow2rigth.style.transform = "translateX(0)";
+        
+                if (acumbuttonAnimations == 2) {
+                    
+                }
+        
+                setTimeout(function() {
+                    
+        
+                    setTimeout(() => {
+                        
+                    }, 100);
+                }, 1400);
+                acumButtonConfiguration--;
+
+            } else {
+                contConfiguration.style.transform = "translateY(-500px)";
+                contPresent.style.opacity = "1";
+
+                contSuma.style.opacity = '0';
+                contResta.style.opacity = '0';
+                contMultiplicacion.style.opacity = '0';
+                contDivision.style.opacity = '0';
+
+                arrowTop.style.transform = "translateY(0)";
+                arrowBottom.style.transform = "translateY(0)";
+                arrow2Left.style.transform = "translateX(0)";
+                arrow2rigth.style.transform = "translateX(0)";
+               
+                if (acumbuttonAnimations == 2) {
+                    
+                }
+                acumButtonConfiguration--;
+            }
+            break;
+    }
+
+    
 })
 
 arrowRigth.addEventListener ("click", function(){
@@ -436,6 +1025,7 @@ arrowRigth.addEventListener ("click", function(){
             contSuma.style.transform = "translateX(0)";
             contSuma.style.opacity = '1';
             arrowLeft.style.display = "block";
+            arrowLeft.style.transform = "translateX(0)";
             acumArrowRigth++;
             acumDisplayArrow++
 
@@ -469,54 +1059,12 @@ arrowRigth.addEventListener ("click", function(){
             contMultiplicacion.style.opacity = '0';
             contDivision.style.transform = "translateX(0)";
             contDivision.style.opacity = '1';
+
             arrowRigth.style.display = "none";
+
             acumArrowRigth++;
             acumArrowLeft++;
             acumDisplayArrow++;
-            break;
-    }
-
-})
-
-arrow2rigth.addEventListener ("click", function(){
-
-    switch (acumArrow2Rigth) {
-        case 1:
-            contPresent.style.opacity = '0';
-            contDivision.style.opacity = '1';
-            contDivision.style.transform = "translateX(0)";
-            arrow2rigth.style.opacity = '0'
-            arrow2rigth.style.display = "block"
-
-            arrowTop.style.transform = "translateY(-200px)"
-            arrow2Left.style.transform = "translateX(-200px)"
-            arrowBottom.style.transform = "translateY(200px)"
-
-            setTimeout (function(){
-                arrow2rigth.innerHTML = 'Inicio<p>&#60;</p>';
-                arrow2rigth.style.opacity = '1';
-            }, 1500)
-
-            acumArrow2Rigth++;
-        break;
-
-        case 2:
-            contPresent.style.opacity = '1';
-            contDivision.style.opacity = '0';
-            contDivision.style.transform = "translateX(900px)";
-            arrow2rigth.style.opacity = '0'
-            arrow2rigth.style.display = "block"
-
-            arrowTop.style.transform = "translateY(0)"
-            arrow2Left.style.transform = "translateX(0)"
-            arrowBottom.style.transform = "translateY(0)"
-
-            setTimeout (function(){
-                arrow2rigth.innerHTML = 'Division<p>&#60;</p>';
-                arrow2rigth.style.opacity = '1';
-            }, 1500)
-
-            acumArrow2Rigth--;
             break;
     }
 
