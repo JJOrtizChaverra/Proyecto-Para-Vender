@@ -317,6 +317,8 @@ buttonTransitios.addEventListener ("click", function() {
             arrowConfiguration2.style.transition = "all 1s";
             iconSetting2.style.transition = "all 1s";
 
+            images.style.
+
             acumButtonTransitions++;
             break;
 
@@ -1116,5 +1118,206 @@ arrowLeft.addEventListener ("click", function(){
             break;
 
     }
+
+})
+
+// OPERACIONES
+
+// Suma
+
+const images = document.querySelectorAll('#cont-suma__table1-img img');
+const inputSuma = document.getElementById("input-suma");
+const buttonSuma = document.getElementById("button-suma");
+
+let acumImgSuma = 24;
+
+for (var i = 0; i < images.length; i++) {
+    images[i].addEventListener('click', function() {
+        if (this.classList.contains('selected')) {
+
+            this.classList.remove('selected');
+            this.style.opacity = '1';
+            acumImgSuma++;
+        } else {
+
+            this.classList.add('selected');
+            this.style.opacity = '0.3';
+            acumImgSuma--;
+        }
+    });
+}
+
+inputSuma.addEventListener ("input", function(){
+
+    if (inputSuma.value.length >= 1) {
+
+        buttonSuma.disabled = false;
+        buttonSuma.style.cursor = "pointer";
+        
+    } else {
+        buttonSuma.disabled = true;
+        buttonSuma.style.cursor = "default";
+    }
+
+})
+
+buttonSuma.addEventListener ("click", function(){
+
+    if (inputSuma.value < 0) {
+        alert("Debes ingresar numeros positivos");
+        inputSuma.focus();
+        inputSuma.value = "";
+        buttonSuma.disabled = true;
+        buttonSuma.style.cursor = "default";
+
+    } else {
+        if (inputSuma.value == acumImgSuma) {
+            alert("Es correcto!");
+            inputSuma.focus();
+            inputSuma.value = "";
+            buttonSuma.disabled = true;
+            buttonSuma.style.cursor = "default";
+    
+        } else {
+            alert("Es incorrecto, vuelve a intentarlo");
+            inputSuma.focus();
+            inputSuma.value = "";
+            buttonSuma.disabled = true;
+            buttonSuma.style.cursor = "default";
+        }
+    }   
+
+})
+
+// Resta
+
+const images2 = document.querySelectorAll('#cont-resta__table-img img');
+const inputResta = document.getElementById("input-resta");
+const buttonResta = document.getElementById("button-resta");
+
+let acumImgResta = 0;
+let acum2ImgResta = 0;
+
+for (var i = 0; i < images2.length; i++) {
+    images2[i].addEventListener('click', function() {
+        if (this.classList.contains('selected')) {
+
+            this.classList.remove('selected');
+            this.style.opacity = '1';
+            acumImgResta++;
+        } else {
+
+            this.classList.add('selected');
+            this.style.opacity = '0.3';
+            acum2ImgResta++;
+        }
+    });
+}
+
+inputResta.addEventListener ("input", function(){
+
+    if (inputResta.value.length >= 1) {
+
+        buttonResta.disabled = false;
+        buttonResta.style.cursor = "pointer";
+        
+    } else {
+        buttonResta.disabled = true;
+        buttonResta.style.cursor = "default";
+    }
+
+})
+
+buttonResta.addEventListener ("click", function(){
+
+    if (inputResta.value < 0) {
+        alert("Debes ingresar numeros positivos");
+        inputResta.focus();
+        inputResta.value = "";
+        buttonResta.disabled = true;
+        buttonResta.style.cursor = "default";
+
+    } else {
+        if (inputResta.value == acumImgResta) {
+            alert("Es correcto!");
+            inputResta.focus();
+            inputResta.value = "";
+            buttonResta.disabled = true;
+            buttonResta.style.cursor = "default";
+    
+        } else {
+            alert("Es incorrecto, vuelve a intentarlo");
+            inputResta.focus();
+            inputResta.value = "";
+            buttonResta.disabled = true;
+            buttonResta.style.cursor = "default";
+        }
+    }   
+
+})
+
+// Multiplicacion
+
+const images3 = document.querySelectorAll('#cont-multiplicacion__table-img img');
+const inputMultiplicacion = document.getElementById("input-multiplicacion");
+const buttonMultiplicacion = document.getElementById("button-multiplicacion");
+
+let acumImgMultiplicacion = 24;
+
+for (var i = 0; i < images3.length; i++) {
+    images3[i].addEventListener('click', function() {
+        if (this.classList.contains('selected')) {
+
+            this.classList.remove('selected');
+            this.style.opacity = '1';
+            acumImgMultiplicacion++;
+        } else {
+
+            this.classList.add('selected');
+            this.style.opacity = '0.3';
+            acumImgMultiplicacion--;
+        }
+    });
+}
+
+inputMultiplicacion.addEventListener ("input", function(){
+
+    if (inputMultiplicacion.value.length >= 1) {
+
+        buttonMultiplicacion.disabled = false;
+        buttonMultiplicacion.style.cursor = "pointer";
+        
+    } else {
+        buttonMultiplicacion.disabled = true;
+        buttonMultiplicacion.style.cursor = "default";
+    }
+
+})
+
+buttonMultiplicacion.addEventListener ("click", function(){
+
+    if (inputMultiplicacion.value < 0) {
+        alert("Debes ingresar numeros positivos");
+        inputMultiplicacion.focus();
+        inputMultiplicacion.value = "";
+        buttonMultiplicacion.disabled = true;
+        buttonMultiplicacion.style.cursor = "default";
+
+    } else {
+        if (inputMultiplicacion.value == acumImgMultiplicacion) {
+            alert("Es correcto!");
+            inputMultiplicacion.focus();
+            inputMultiplicacion.value = "";
+            buttonMultiplicacion.disabled = true;
+            buttonMultiplicacion.style.cursor = "default";
+    
+        } else {
+            alert("Es incorrecto, vuelve a intentarlo");
+            inputMultiplicacion.focus();
+            inputMultiplicacion.value = "";
+            buttonMultiplicacion.disabled = true;
+            buttonMultiplicacion.style.cursor = "default";
+        }
+    }   
 
 })
