@@ -49,10 +49,10 @@ let acumArrowBottom = 1;
 let acumArrow2Left = 1;
 let acumArrow2Rigth = 1;
 let acumButtonConfiguration = 1;
+let acumButtonPreferencias = 1;
 let acumDisplayArrow = 0;
 
-arrowConfiguration.addEventListener ("click", function() {
-
+function mostrarPreferencias () {
     if (acumButtonTransitions == 2) {
         arrowConfiguration.style.display = 'none';
 
@@ -99,11 +99,10 @@ arrowConfiguration.addEventListener ("click", function() {
             arrowRigth.style.animation = "none";
         }
     }
-    acumButtonConfiguration = 1;
-})
+    acumButtonPreferencias++;
+}
 
-arrowConfiguration2.addEventListener ("click", function() {
-
+function ocultarPreferencias () {
     if (acumButtonTransitions == 2) {
 
         contConfiguration.style.transform = "translateY(-500px)";
@@ -175,8 +174,12 @@ arrowConfiguration2.addEventListener ("click", function() {
         }
 
     }
-    acumButtonConfiguration = 1;
-})
+    acumButtonPreferencias--;
+}
+
+arrowConfiguration.addEventListener ("click", mostrarPreferencias)
+
+arrowConfiguration2.addEventListener ("click", ocultarPreferencias)
 
 buttonDarkMode.addEventListener("click", function() {
     
@@ -207,7 +210,7 @@ buttonShadows.addEventListener("click", function() {
 
             for (var i = 0; i < buttons.length; i++) {
 
-                if (i >= 4) {
+                if (i >= 9)  {
                     buttons[i].style.boxShadow = "-3px 3px 5px 1px rgb(65, 65, 65)";
                 }
             }
@@ -260,6 +263,18 @@ buttonBoxFloat.addEventListener ("click", function(){
 
 })
 
+const imagesSuma1 = document.querySelectorAll('#cont-suma__table1-img img');
+const imagesSuma2 = document.querySelectorAll('#cont-suma__table2-img img');
+
+const imagesResta1 = document.querySelectorAll('#cont-resta__table1-img img');
+const imagesResta2 = document.querySelectorAll('#cont-resta__table2-img img');
+
+const imagesMultiplicacion1 = document.querySelectorAll('#cont-multiplicacion__table1-img img');
+const imagesMultiplicacion2 = document.querySelectorAll('#cont-multiplicacion__table2-img img');
+
+const imagesDivision1 = document.querySelectorAll('#cont-division__table1-img img');
+const imagesDivision2 = document.querySelectorAll('#cont-division__table2-img img');
+
 
 buttonAnimations.addEventListener ("click", function(){
     
@@ -273,6 +288,20 @@ buttonAnimations.addEventListener ("click", function(){
             arrowTop2.style.animation = "move4 3s ease 0s infinite normal";
             arrow2Left2.style.animation = "move5 3s ease 0s infinite normal";
             arrow2Rigth2.style.animation = "move7 3s ease 0s infinite normal";
+
+            for (var i = 0; i < imagesSuma1.length; i++) {
+                imagesSuma1[i].style.animation = "rotateImage1 3s ease 0s infinite normal";
+                imagesSuma2[i].style.animation = "rotateImage1 3s ease 0s infinite normal";
+
+                imagesResta1[i].style.animation = "rotateImage2 3s ease 0s infinite normal";
+                imagesResta2[i].style.animation = "rotateImage2 3s ease 0s infinite normal";
+
+                imagesMultiplicacion1[i].style.animation = "rotateImage3 3s ease 0s infinite normal";
+                imagesMultiplicacion2[i].style.animation = "rotateImage3 3s ease 0s infinite normal";
+
+                imagesDivision1[i].style.animation = "rotateImage4 3s ease 0s infinite normal";
+            }
+
             acumbuttonAnimations++;
             break;
 
@@ -284,6 +313,20 @@ buttonAnimations.addEventListener ("click", function(){
             arrowTop2.style.animation = "none";
             arrow2Left2.style.animation = "none";
             arrow2Rigth2.style.animation = "none";
+
+            for (var i = 0; i < imagesSuma1.length; i++) {
+                imagesSuma1[i].style.animation = "none";
+                imagesSuma2[i].style.animation = "none";
+
+                imagesResta1[i].style.animation = "none";
+                imagesResta2[i].style.animation = "none";
+
+                imagesMultiplicacion1[i].style.animation = "none";
+                imagesMultiplicacion2[i].style.animation = "none";
+
+                imagesDivision1[i].style.animation = "none";
+            }
+
             acumbuttonAnimations--;
             break;
     }
@@ -317,7 +360,19 @@ buttonTransitios.addEventListener ("click", function() {
             arrowConfiguration2.style.transition = "all 1s";
             iconSetting2.style.transition = "all 1s";
 
-            images.style.
+            for (var i = 0; i < imagesSuma1.length; i++) {
+                imagesSuma1[i].style.transition = "all 1.2s"
+                imagesSuma2[i].style.transition = "all 1.2s"
+
+                imagesResta1[i].style.transition = "all 1.2s"
+                imagesResta2[i].style.transition = "all 1.2s"
+
+                imagesMultiplicacion1[i].style.transition = "all 1.2s"
+                imagesMultiplicacion2[i].style.transition = "all 1.2s"
+
+                imagesDivision1[i].style.transition = "all 1.2s"
+                imagesDivision2[i].style.transition = "all 1.2s"
+            }
 
             acumButtonTransitions++;
             break;
@@ -327,6 +382,8 @@ buttonTransitios.addEventListener ("click", function() {
         for (var i = 0; i < divs.length; i++) {
             divs[i].style.transition = "none";
         }
+
+        main.style.transition = "none";
         arrowLeft.style.transition = "none";
         arrowRigth.style.transition = "none";
         arrowConfig1.style.transition = "none"
@@ -344,6 +401,20 @@ buttonTransitios.addEventListener ("click", function() {
         arrowConfiguration.style.transition = "none";
         arrowConfiguration2.style.transition = "none";
         iconSetting2.style.transition = "none";
+
+        for (var i = 0; i < imagesSuma1.length; i++) {
+            imagesSuma1[i].style.transition = "none"
+            imagesSuma2[i].style.transition = "none"
+
+            imagesResta1[i].style.transition = "none"
+            imagesResta2[i].style.transition = "none"
+
+            imagesMultiplicacion1[i].style.transition = "none"
+            imagesMultiplicacion2[i].style.transition = "none"
+
+            imagesDivision1[i].style.transition = "none"
+            imagesDivision2[i].style.transition = "none"
+        }
 
         acumButtonTransitions--;
         break;
@@ -426,6 +497,7 @@ buttonModoXeY.addEventListener ("click", function(){
         contDivision.style.transform = "translateX(900px)";
         }
         acumbuttonModoXeY++;
+        acumButtonConfiguration = 1;
         break;
 
         case 2:
@@ -484,69 +556,75 @@ buttonModoXeY.addEventListener ("click", function(){
 
             arrowLeft.style.display = "none";
 
-            iconSetting.style.opacity = '0';
+            if (acumButtonTransitions == 1) {
+                iconSetting.style.display = 'none';
+            } else {
+                    
+                iconSetting.style.opacity = '0';
+            
             setTimeout(() => {
                 iconSetting.style.display = "none";
             }, 1500);
+            }
+
 
             acumbuttonModoXeY--;
-
+            acumButtonPreferencias = 1;
             break;
     }
 
 })
 
-arrowTop.addEventListener("click", function(){
-
+function mostrarSuma () {
     switch (acumArrowTop) {
         case 1:
 
-            if (acumButtonTransitions == 1) {
+        if (acumButtonTransitions == 1) {
 
-                iconSetting.style.display = "none";
+            iconSetting.style.display = "none";
 
-                contPresent.style.opacity = '0';
-                contSuma.style.opacity = '1';
-                contSuma.style.transform = "translateY(0)";
-                arrowTop.style.transform = "translateY(-200px)";
+            contPresent.style.opacity = '0';
+            contSuma.style.opacity = '1';
+            contSuma.style.transform = "translateY(0)";
+            arrowTop.style.transform = "translateY(-200px)";
 
-                arrow2Left.style.transform = "translateX(-200px)"
-                arrow2rigth.style.transform = "translateX(200px)"
-                arrowBottom.style.transform = "translateY(200px)"
+            arrow2Left.style.transform = "translateX(-200px)"
+            arrow2rigth.style.transform = "translateX(200px)"
+            arrowBottom.style.transform = "translateY(200px)"
+
+        
+            arrowTop.style.transform = "translateY(0)"
+            arrowTop.innerHTML = 'Inicio<p id="arrow-top2">&#8744;</p>';
+            arrowTop.style.opacity = "1";
 
             
+        
+            acumArrowTop++;
+
+        } else {
+            contPresent.style.opacity = '0';
+            contSuma.style.opacity = '1';
+            contSuma.style.transform = "translateY(0)";
+            arrowTop.style.transform = "translateY(-200px)";
+
+            iconSetting.style.opacity = '0';
+            iconSetting.style.cursor = "default";
+
+            setTimeout(() => {
+                iconSetting.style.display = "none";
+            }, 1000);
+
+            arrow2Left.style.transform = "translateX(-200px)"
+            arrow2rigth.style.transform = "translateX(200px)"
+            arrowBottom.style.transform = "translateY(200px)"
+
+            setTimeout (function(){
                 arrowTop.style.transform = "translateY(0)"
                 arrowTop.innerHTML = 'Inicio<p id="arrow-top2">&#8744;</p>';
                 arrowTop.style.opacity = "1";
-
-                
-            
-                acumArrowTop++;
-
-            } else {
-                contPresent.style.opacity = '0';
-                contSuma.style.opacity = '1';
-                contSuma.style.transform = "translateY(0)";
-                arrowTop.style.transform = "translateY(-200px)";
-
-                iconSetting.style.opacity = '0';
-                iconSetting.style.cursor = "default";
-
-                setTimeout(() => {
-                    iconSetting.style.display = "none";
-                }, 1000);
-
-                arrow2Left.style.transform = "translateX(-200px)"
-                arrow2rigth.style.transform = "translateX(200px)"
-                arrowBottom.style.transform = "translateY(200px)"
-
-                setTimeout (function(){
-                    arrowTop.style.transform = "translateY(0)"
-                    arrowTop.innerHTML = 'Inicio<p id="arrow-top2">&#8744;</p>';
-                    arrowTop.style.opacity = "1";
-                }, 1000)
-                acumArrowTop++;
-            }
+            }, 1000)
+            acumArrowTop++;
+        }
 
             
             break;
@@ -600,11 +678,107 @@ arrowTop.addEventListener("click", function(){
             break;
 
     }
+}
 
-})
+function mostrarSuma2 () {
+    if (acumButtonTransitions == 1) {
 
-arrow2Left.addEventListener ("click", function(){
+        iconSetting.style.display = "none";
 
+        contPresent.style.opacity = '0';
+        contSuma.style.opacity = '1';
+        contSuma.style.transform = "translateY(0)";
+        arrowTop.style.transform = "translateY(-200px)";
+
+        arrow2Left.style.transform = "translateX(-200px)"
+        arrow2rigth.style.transform = "translateX(200px)"
+        arrowBottom.style.transform = "translateY(200px)"
+
+    
+        arrowTop.style.transform = "translateY(0)"
+        arrowTop.innerHTML = 'Inicio<p id="arrow-top2">&#8744;</p>';
+        arrowTop.style.opacity = "1";
+
+        
+    
+        acumArrowTop++;
+
+    } else {
+        contPresent.style.opacity = '0';
+        contSuma.style.opacity = '1';
+        contSuma.style.transform = "translateY(0)";
+        arrowTop.style.transform = "translateY(-200px)";
+
+        iconSetting.style.opacity = '0';
+        iconSetting.style.cursor = "default";
+
+        setTimeout(() => {
+            iconSetting.style.display = "none";
+        }, 1000);
+
+        arrow2Left.style.transform = "translateX(-200px)"
+        arrow2rigth.style.transform = "translateX(200px)"
+        arrowBottom.style.transform = "translateY(200px)"
+
+        setTimeout (function(){
+            arrowTop.style.transform = "translateY(0)"
+            arrowTop.innerHTML = 'Inicio<p id="arrow-top2">&#8744;</p>';
+            arrowTop.style.opacity = "1";
+        }, 1000)
+        acumArrowTop++;
+    }
+
+}
+
+function ocultarSuma () {
+    if (acumButtonTransitions == 1) {
+        contPresent.style.opacity = '1';
+        contSuma.style.opacity = '0';
+        contSuma.style.transform = "translateY(-500px)";
+        arrowTop.style.transform = "translateY(-200px)"
+
+        iconSetting.style.display = "block";
+
+        arrow2Left.style.transform = "translateX(0)"
+        arrow2rigth.style.transform = "translateX(0)"
+        arrowBottom.style.transform = "translateY(0)"
+    
+        arrowTop.innerHTML = 'Suma<p>&#8744;</p>';
+        arrowTop.style.transform = "translateY(0)";
+
+        acumArrowTop--;
+
+    } else {
+        contPresent.style.opacity = '1';
+        contSuma.style.opacity = '0';
+        contSuma.style.transform = "translateY(-500px)";
+        arrowTop.style.transform = "translateY(-200px)"
+
+        iconSetting.style.display = "block";
+        iconSetting.style.opacity = '0';
+
+
+        setTimeout(() => {
+            iconSetting.style.opacity = '1';
+            iconSetting.style.cursor = "pointer";
+        }, 100);
+
+        arrow2Left.style.transform = "translateX(0)"
+        arrow2rigth.style.transform = "translateX(0)"
+        arrowBottom.style.transform = "translateY(0)"
+    
+        setTimeout (function (){
+            arrowTop.innerHTML = 'Suma<p>&#8744;</p>';
+            arrowTop.style.transform = "translateY(0)";
+        }, 310)
+
+        acumArrowTop--;
+    }
+}
+
+arrowTop.addEventListener("click", mostrarSuma)
+
+function mostrarResta () {
     switch (acumArrow2Left) {
         case 1:
 
@@ -701,218 +875,501 @@ arrow2Left.addEventListener ("click", function(){
             }
             break;
     }
+}
 
-})
+function mostrarResta2 () {
+    if (acumButtonTransitions == 1) {
 
-arrowBottom.addEventListener ("click", function(){
+        contPresent.style.opacity = '0';
+        contResta.style.opacity = '1';
+        contResta.style.transform = "translateX(0)";
+        arrow2Left.style.transform = "translateX(-200px)";
 
+        iconSetting.style.display = "none";
+
+        arrowTop.style.transform = "translateY(-200px)"
+        arrow2rigth.style.transform = "translateX(200px)"
+        arrowBottom.style.transform = "translateY(200px)"
+
+        
+        arrow2Left.innerHTML = 'Inicio<p>&#62;</p>';
+        arrow2Left.style.transform = "translateX(0)";
+        
+
+        acumArrow2Left++;
+    } else {
+        contPresent.style.opacity = '0';
+        contResta.style.opacity = '1';
+        contResta.style.transform = "translateX(0)";
+        arrow2Left.style.transform = "translateX(-200px)";
+
+        iconSetting.style.opacity = '0';
+        iconSetting.style.cursor = "default";
+
+        setTimeout(() => {
+            iconSetting.style.display = "none";
+        }, 1000);
+
+        arrowTop.style.transform = "translateY(-200px)"
+        arrow2rigth.style.transform = "translateX(200px)"
+        arrowBottom.style.transform = "translateY(200px)"
+
+        setTimeout (function(){
+            arrow2Left.innerHTML = 'Inicio<p>&#62;</p>';
+            arrow2Left.style.transform = "translateX(0)";
+        }, 1000)
+
+        acumArrow2Left++;
+    }
+}
+
+function ocultarResta () {
+    if (acumButtonTransitions == 1) {
+        contPresent.style.opacity = '1';
+        contResta.style.opacity = '0';
+        contResta.style.transform = "translateX(-900px)";
+        arrow2Left.style.transform = "translateX(-200px)";
+
+        iconSetting.style.display = "block";
+
+        arrowTop.style.transform = "translateY(0)"
+        arrow2rigth.style.transform = "translateX(0)"
+        arrowBottom.style.transform = "translateY(0)"
+
+        
+        arrow2Left.innerHTML = 'Resta<p>&#62;</p>';
+        arrow2Left.style.transform = "translateX(0)";
+        
+
+        acumArrow2Left--;
+     
+    } else {
+        contPresent.style.opacity = '1';
+        contResta.style.opacity = '0';
+        contResta.style.transform = "translateX(-900px)";
+        arrow2Left.style.transform = "translateX(-200px)";
+
+        arrowTop.style.transform = "translateY(0)"
+        arrow2rigth.style.transform = "translateX(0)"
+        arrowBottom.style.transform = "translateY(0)"
+
+        iconSetting.style.display = "block";
+        iconSetting.style.opacity = '0';
+
+
+        setTimeout(() => {
+            iconSetting.style.opacity = '1';
+            iconSetting.style.cursor = "pointer";
+        }, 100);
+
+        setTimeout (function(){
+            arrow2Left.innerHTML = 'Resta<p>&#62;</p>';
+            arrow2Left.style.transform = "translateX(0)";
+        }, 330)
+
+        acumArrow2Left--;
+    }
+}
+
+arrow2Left.addEventListener ("click", mostrarResta)
+
+function mostrarMultiplicacion () {
     switch (acumArrowBottom) {
         case 1:
 
-            if (acumButtonTransitions == 1) {
-                contPresent.style.opacity = '0';
-                contMultiplicacion.style.opacity = '1';
-                contMultiplicacion.style.transform = "translateY(0)";
-                arrowBottom.style.transform = "translateY(200px)";
+        if (acumButtonTransitions == 1) {
+            contPresent.style.opacity = '0';
+            contMultiplicacion.style.opacity = '1';
+            contMultiplicacion.style.transform = "translateY(0)";
+            arrowBottom.style.transform = "translateY(200px)";
 
+            iconSetting.style.display = "none";
+        
+
+            arrowTop.style.transform = "translateY(-200px)"
+            arrow2rigth.style.transform = "translateX(200px)"
+            arrow2Left.style.transform = "translateX(-200px)"
+
+        
+            arrowBottom.innerHTML = '<p id="arrow-bottom-p">&#8743;</p>Inicio';
+            arrowBottom.style.transform = "translateY(0)";
+        
+
+            acumArrowBottom++;
+
+        } else {
+            contPresent.style.opacity = '0';
+            contMultiplicacion.style.opacity = '1';
+            contMultiplicacion.style.transform = "translateY(0)";
+            arrowBottom.style.transform = "translateY(200px)";
+        
+            iconSetting.style.opacity = '0';
+            iconSetting.style.cursor = "default";
+
+            setTimeout(() => {
                 iconSetting.style.display = "none";
-            
+            }, 1000);
 
-                arrowTop.style.transform = "translateY(-200px)"
-                arrow2rigth.style.transform = "translateX(200px)"
-                arrow2Left.style.transform = "translateX(-200px)"
+            arrowTop.style.transform = "translateY(-200px)"
+            arrow2rigth.style.transform = "translateX(200px)"
+            arrow2Left.style.transform = "translateX(-200px)"
 
-            
+            setTimeout (function(){
                 arrowBottom.innerHTML = '<p id="arrow-bottom-p">&#8743;</p>Inicio';
                 arrowBottom.style.transform = "translateY(0)";
-            
+            }, 1000)
 
-                acumArrowBottom++;
-
-            } else {
-                contPresent.style.opacity = '0';
-                contMultiplicacion.style.opacity = '1';
-                contMultiplicacion.style.transform = "translateY(0)";
-                arrowBottom.style.transform = "translateY(200px)";
-            
-                iconSetting.style.opacity = '0';
-                iconSetting.style.cursor = "default";
-
-                setTimeout(() => {
-                    iconSetting.style.display = "none";
-                }, 1000);
-
-                arrowTop.style.transform = "translateY(-200px)"
-                arrow2rigth.style.transform = "translateX(200px)"
-                arrow2Left.style.transform = "translateX(-200px)"
-
-                setTimeout (function(){
-                    arrowBottom.innerHTML = '<p id="arrow-bottom-p">&#8743;</p>Inicio';
-                    arrowBottom.style.transform = "translateY(0)";
-                }, 1000)
-
-                acumArrowBottom++;
-            }
+            acumArrowBottom++;
+        }
             break;
 
         case 2:
 
-            if (acumButtonTransitions == 1) {
-                contPresent.style.opacity = '1';
-                contMultiplicacion.style.opacity = '0';
-                contMultiplicacion.style.transform = "translateY(500px)";
-                arrowBottom.style.transform = "translateY(200px)";
+        if (acumButtonTransitions == 1) {
+            contPresent.style.opacity = '1';
+            contMultiplicacion.style.opacity = '0';
+            contMultiplicacion.style.transform = "translateY(500px)";
+            arrowBottom.style.transform = "translateY(200px)";
 
-                iconSetting.style.display = "block";
+            iconSetting.style.display = "block";
 
-                arrowTop.style.transform = "translateY(0)"
-                arrow2rigth.style.transform = "translateX(0)"
-                arrow2Left.style.transform = "translateX(0)"
+            arrowTop.style.transform = "translateY(0)"
+            arrow2rigth.style.transform = "translateX(0)"
+            arrow2Left.style.transform = "translateX(0)"
 
-                
+            
+            arrowBottom.innerHTML = '<p>&#8743;</p>Multiplicacion';
+            arrowBottom.style.transform = "translateY(0)";
+            
+
+            acumArrowBottom--;
+        } else {
+            contPresent.style.opacity = '1';
+            contMultiplicacion.style.opacity = '0';
+            contMultiplicacion.style.transform = "translateY(500px)";
+            arrowBottom.style.transform = "translateY(200px)";
+
+            arrowTop.style.transform = "translateY(0)"
+            arrow2rigth.style.transform = "translateX(0)"
+            arrow2Left.style.transform = "translateX(0)"
+
+            iconSetting.style.display = "block";
+            iconSetting.style.opacity = '0';
+
+
+            setTimeout(() => {
+                iconSetting.style.opacity = '1';
+                iconSetting.style.cursor = "pointer";
+            }, 100);
+
+            setTimeout (function(){
                 arrowBottom.innerHTML = '<p>&#8743;</p>Multiplicacion';
                 arrowBottom.style.transform = "translateY(0)";
-                
+            }, 320)
 
-                acumArrowBottom--;
-            } else {
-                contPresent.style.opacity = '1';
-                contMultiplicacion.style.opacity = '0';
-                contMultiplicacion.style.transform = "translateY(500px)";
-                arrowBottom.style.transform = "translateY(200px)";
-
-                arrowTop.style.transform = "translateY(0)"
-                arrow2rigth.style.transform = "translateX(0)"
-                arrow2Left.style.transform = "translateX(0)"
-
-                iconSetting.style.display = "block";
-                iconSetting.style.opacity = '0';
-
-
-                setTimeout(() => {
-                    iconSetting.style.opacity = '1';
-                    iconSetting.style.cursor = "pointer";
-                }, 100);
-
-                setTimeout (function(){
-                    arrowBottom.innerHTML = '<p>&#8743;</p>Multiplicacion';
-                    arrowBottom.style.transform = "translateY(0)";
-                }, 320)
-
-                acumArrowBottom--;
-            }
+            acumArrowBottom--;
+        }
 
             break;
     }
+}
 
-})
+function mostrarMultiplicacion2 () {
+    if (acumButtonTransitions == 1) {
+        contPresent.style.opacity = '0';
+        contMultiplicacion.style.opacity = '1';
+        contMultiplicacion.style.transform = "translateY(0)";
+        arrowBottom.style.transform = "translateY(200px)";
 
-arrow2rigth.addEventListener ("click", function(){
+        iconSetting.style.display = "none";
+    
 
+        arrowTop.style.transform = "translateY(-200px)"
+        arrow2rigth.style.transform = "translateX(200px)"
+        arrow2Left.style.transform = "translateX(-200px)"
+
+    
+        arrowBottom.innerHTML = '<p id="arrow-bottom-p">&#8743;</p>Inicio';
+        arrowBottom.style.transform = "translateY(0)";
+    
+
+        acumArrowBottom++;
+
+    } else {
+        contPresent.style.opacity = '0';
+        contMultiplicacion.style.opacity = '1';
+        contMultiplicacion.style.transform = "translateY(0)";
+        arrowBottom.style.transform = "translateY(200px)";
+    
+        iconSetting.style.opacity = '0';
+        iconSetting.style.cursor = "default";
+
+        setTimeout(() => {
+            iconSetting.style.display = "none";
+        }, 1000);
+
+        arrowTop.style.transform = "translateY(-200px)"
+        arrow2rigth.style.transform = "translateX(200px)"
+        arrow2Left.style.transform = "translateX(-200px)"
+
+        setTimeout (function(){
+            arrowBottom.innerHTML = '<p id="arrow-bottom-p">&#8743;</p>Inicio';
+            arrowBottom.style.transform = "translateY(0)";
+        }, 1000)
+
+        acumArrowBottom++;
+    }
+}
+
+function ocultarMultiplicacion () {
+    if (acumButtonTransitions == 1) {
+        contPresent.style.opacity = '1';
+        contMultiplicacion.style.opacity = '0';
+        contMultiplicacion.style.transform = "translateY(500px)";
+        arrowBottom.style.transform = "translateY(200px)";
+
+        iconSetting.style.display = "block";
+
+        arrowTop.style.transform = "translateY(0)"
+        arrow2rigth.style.transform = "translateX(0)"
+        arrow2Left.style.transform = "translateX(0)"
+
+        
+        arrowBottom.innerHTML = '<p>&#8743;</p>Multiplicacion';
+        arrowBottom.style.transform = "translateY(0)";
+        
+
+        acumArrowBottom--;
+    } else {
+        contPresent.style.opacity = '1';
+        contMultiplicacion.style.opacity = '0';
+        contMultiplicacion.style.transform = "translateY(500px)";
+        arrowBottom.style.transform = "translateY(200px)";
+
+        arrowTop.style.transform = "translateY(0)"
+        arrow2rigth.style.transform = "translateX(0)"
+        arrow2Left.style.transform = "translateX(0)"
+
+        iconSetting.style.display = "block";
+        iconSetting.style.opacity = '0';
+
+
+        setTimeout(() => {
+            iconSetting.style.opacity = '1';
+            iconSetting.style.cursor = "pointer";
+        }, 100);
+
+        setTimeout (function(){
+            arrowBottom.innerHTML = '<p>&#8743;</p>Multiplicacion';
+            arrowBottom.style.transform = "translateY(0)";
+        }, 320)
+
+        acumArrowBottom--;
+    }
+}
+
+arrowBottom.addEventListener ("click", mostrarMultiplicacion)
+
+function mostrarDivision () {
     switch (acumArrow2Rigth) {
         case 1:
 
-            if (acumButtonTransitions == 1) {
-                contPresent.style.opacity = '0';
-                contDivision.style.opacity = '1';
-                contDivision.style.transform = "translateX(0)";
-                arrow2rigth.style.transform = "translateX(200px)";
+        if (acumButtonTransitions == 1) {
+            contPresent.style.opacity = '0';
+            contDivision.style.opacity = '1';
+            contDivision.style.transform = "translateX(0)";
+            arrow2rigth.style.transform = "translateX(200px)";
 
+            iconSetting.style.display = "none";
+
+            arrowTop.style.transform = "translateY(-200px)"
+            arrow2Left.style.transform = "translateX(-200px)"
+            arrowBottom.style.transform = "translateY(200px)"
+
+        
+            arrow2rigth.innerHTML = 'Inicio<p>&#60;</p>';
+            arrow2rigth.style.transform = "translateX(0)";
+        
+
+            acumArrow2Rigth++;
+
+        } else {
+            contPresent.style.opacity = '0';
+            contDivision.style.opacity = '1';
+            contDivision.style.transform = "translateX(0)";
+            arrow2rigth.style.transform = "translateX(200px)";
+
+            arrowTop.style.transform = "translateY(-200px)"
+            arrow2Left.style.transform = "translateX(-200px)"
+            arrowBottom.style.transform = "translateY(200px)"
+
+            iconSetting.style.opacity = '0';
+            iconSetting.style.cursor = "default";
+
+            setTimeout(() => {
                 iconSetting.style.display = "none";
+            }, 1000);
 
-                arrowTop.style.transform = "translateY(-200px)"
-                arrow2Left.style.transform = "translateX(-200px)"
-                arrowBottom.style.transform = "translateY(200px)"
 
-            
+            setTimeout (function(){
                 arrow2rigth.innerHTML = 'Inicio<p>&#60;</p>';
                 arrow2rigth.style.transform = "translateX(0)";
-            
+            }, 1000)
 
-                acumArrow2Rigth++;
-
-            } else {
-                contPresent.style.opacity = '0';
-                contDivision.style.opacity = '1';
-                contDivision.style.transform = "translateX(0)";
-                arrow2rigth.style.transform = "translateX(200px)";
-
-                arrowTop.style.transform = "translateY(-200px)"
-                arrow2Left.style.transform = "translateX(-200px)"
-                arrowBottom.style.transform = "translateY(200px)"
-
-                iconSetting.style.opacity = '0';
-                iconSetting.style.cursor = "default";
-
-                setTimeout(() => {
-                    iconSetting.style.display = "none";
-                }, 1000);
-
-
-                setTimeout (function(){
-                    arrow2rigth.innerHTML = 'Inicio<p>&#60;</p>';
-                    arrow2rigth.style.transform = "translateX(0)";
-                }, 1000)
-
-                acumArrow2Rigth++;
-            }
+            acumArrow2Rigth++;
+        }
 
             
         break;
 
         case 2:
 
-            if (acumButtonTransitions == 1) {
-                contPresent.style.opacity = '1';
-                contDivision.style.opacity = '0';
-                contDivision.style.transform = "translateX(900px)";
-                arrow2rigth.style.transform = "translateX(200px)"
+        if (acumButtonTransitions == 1) {
+            contPresent.style.opacity = '1';
+            contDivision.style.opacity = '0';
+            contDivision.style.transform = "translateX(900px)";
+            arrow2rigth.style.transform = "translateX(200px)"
 
-                iconSetting.style.display = "block";
+            iconSetting.style.display = "block";
 
-                arrowTop.style.transform = "translateY(0)"
-                arrow2Left.style.transform = "translateX(0)"
-                arrowBottom.style.transform = "translateY(0)"
+            arrowTop.style.transform = "translateY(0)"
+            arrow2Left.style.transform = "translateX(0)"
+            arrowBottom.style.transform = "translateY(0)"
 
-                    arrow2rigth.innerHTML = 'Division<p>&#60;</p>';
-                    arrow2rigth.style.transform = "translateX(0)";
-                
+                arrow2rigth.innerHTML = 'Division<p>&#60;</p>';
+                arrow2rigth.style.transform = "translateX(0)";
+            
 
-                acumArrow2Rigth--;
+            acumArrow2Rigth--;
 
-            } else {
-                contPresent.style.opacity = '1';
-                contDivision.style.opacity = '0';
-                contDivision.style.transform = "translateX(900px)";
-                arrow2rigth.style.transform = "translateX(200px)"
+        } else {
+            contPresent.style.opacity = '1';
+            contDivision.style.opacity = '0';
+            contDivision.style.transform = "translateX(900px)";
+            arrow2rigth.style.transform = "translateX(200px)"
 
-                arrowTop.style.transform = "translateY(0)"
-                arrow2Left.style.transform = "translateX(0)"
-                arrowBottom.style.transform = "translateY(0)"
+            arrowTop.style.transform = "translateY(0)"
+            arrow2Left.style.transform = "translateX(0)"
+            arrowBottom.style.transform = "translateY(0)"
 
-                iconSetting.style.display = "block";
-                iconSetting.style.opacity = '0';
+            iconSetting.style.display = "block";
+            iconSetting.style.opacity = '0';
 
 
-                setTimeout(() => {
-                    iconSetting.style.opacity = '1';
-                    iconSetting.style.cursor = "pointer";
-                }, 100);
+            setTimeout(() => {
+                iconSetting.style.opacity = '1';
+                iconSetting.style.cursor = "pointer";
+            }, 100);
 
-                setTimeout (function(){
-                    arrow2rigth.innerHTML = 'Division<p>&#60;</p>';
-                    arrow2rigth.style.transform = "translateX(0)";
-                }, 340)
+            setTimeout (function(){
+                arrow2rigth.innerHTML = 'Division<p>&#60;</p>';
+                arrow2rigth.style.transform = "translateX(0)";
+            }, 340)
 
-                acumArrow2Rigth--;
-            }
+            acumArrow2Rigth--;
+        }
             break;
     }
+}
 
-})
+function mostrarDivision2 () {
+    if (acumButtonTransitions == 1) {
+        contPresent.style.opacity = '0';
+        contDivision.style.opacity = '1';
+        contDivision.style.transform = "translateX(0)";
+        arrow2rigth.style.transform = "translateX(200px)";
 
-iconSetting.addEventListener ("click", function(){
+        iconSetting.style.display = "none";
 
+        arrowTop.style.transform = "translateY(-200px)"
+        arrow2Left.style.transform = "translateX(-200px)"
+        arrowBottom.style.transform = "translateY(200px)"
+
+    
+        arrow2rigth.innerHTML = 'Inicio<p>&#60;</p>';
+        arrow2rigth.style.transform = "translateX(0)";
+    
+
+        acumArrow2Rigth++;
+
+    } else {
+        contPresent.style.opacity = '0';
+        contDivision.style.opacity = '1';
+        contDivision.style.transform = "translateX(0)";
+        arrow2rigth.style.transform = "translateX(200px)";
+
+        arrowTop.style.transform = "translateY(-200px)"
+        arrow2Left.style.transform = "translateX(-200px)"
+        arrowBottom.style.transform = "translateY(200px)"
+
+        iconSetting.style.opacity = '0';
+        iconSetting.style.cursor = "default";
+
+        setTimeout(() => {
+            iconSetting.style.display = "none";
+        }, 1000);
+
+
+        setTimeout (function(){
+            arrow2rigth.innerHTML = 'Inicio<p>&#60;</p>';
+            arrow2rigth.style.transform = "translateX(0)";
+        }, 1000)
+
+        acumArrow2Rigth++;
+    }
+
+}
+
+function ocultarDivision () {
+    if (acumButtonTransitions == 1) {
+        contPresent.style.opacity = '1';
+        contDivision.style.opacity = '0';
+        contDivision.style.transform = "translateX(900px)";
+        arrow2rigth.style.transform = "translateX(200px)"
+
+        iconSetting.style.display = "block";
+
+        arrowTop.style.transform = "translateY(0)"
+        arrow2Left.style.transform = "translateX(0)"
+        arrowBottom.style.transform = "translateY(0)"
+
+            arrow2rigth.innerHTML = 'Division<p>&#60;</p>';
+            arrow2rigth.style.transform = "translateX(0)";
+        
+
+        acumArrow2Rigth--;
+
+    } else {
+        contPresent.style.opacity = '1';
+        contDivision.style.opacity = '0';
+        contDivision.style.transform = "translateX(900px)";
+        arrow2rigth.style.transform = "translateX(200px)"
+
+        arrowTop.style.transform = "translateY(0)"
+        arrow2Left.style.transform = "translateX(0)"
+        arrowBottom.style.transform = "translateY(0)"
+
+        iconSetting.style.display = "block";
+        iconSetting.style.opacity = '0';
+
+
+        setTimeout(() => {
+            iconSetting.style.opacity = '1';
+            iconSetting.style.cursor = "pointer";
+        }, 100);
+
+        setTimeout (function(){
+            arrow2rigth.innerHTML = 'Division<p>&#60;</p>';
+            arrow2rigth.style.transform = "translateX(0)";
+        }, 340)
+
+        acumArrow2Rigth--;
+    }
+}
+
+arrow2rigth.addEventListener ("click", mostrarDivision)
+
+function mostrarConfiguracion () {
     switch (acumButtonConfiguration) {
         case 1:
 
@@ -1014,12 +1471,111 @@ iconSetting.addEventListener ("click", function(){
             }
             break;
     }
+}
 
-    
-})
+function mostrarConfiguracion2 () {
+            if (acumButtonTransitions == 2) {
+                contConfiguration.style.transform = "translateY(0)";
+                contPresent.style.opacity = "0";
+                
+                contSuma.style.opacity = '0';
+                contResta.style.opacity = '0';
+                contMultiplicacion.style.opacity = '0';
+                contDivision.style.opacity = '0';
 
-arrowRigth.addEventListener ("click", function(){
+                arrowTop.style.transform = "translateY(-200px)";
+                arrowBottom.style.transform = "translateY(200px)";
+                arrow2Left.style.transform = "translateX(-200px)";
+                arrow2rigth.style.transform = "translateX(200px)";
+        
+                if (acumbuttonAnimations == 2) {
+                    
+                }
+        
+                setTimeout(function() {
+                    
+        
+                    setTimeout(() => {
+                        
+                    }, 100);
+                }, 1400);
+                acumButtonConfiguration++;
+        
+            } else {
+                contConfiguration.style.transform = "translateY(0)";
+                contPresent.style.opacity = "0";
+                
+                contSuma.style.opacity = '0';
+                contResta.style.opacity = '0';
+                contMultiplicacion.style.opacity = '0';
+                contDivision.style.opacity = '0';
 
+                arrowTop.style.transform = "translateY(-200px)";
+                arrowBottom.style.transform = "translateY(200px)";
+                arrow2Left.style.transform = "translateX(-200px)";
+                arrow2rigth.style.transform = "translateX(200px)";
+               
+                if (acumbuttonAnimations == 2) {
+                    
+                }
+                acumButtonConfiguration++;
+            }
+}
+
+function ocultarConfiguracion () {
+    if (acumButtonTransitions == 2) {
+        contConfiguration.style.transform = "translateY(-500px)";
+        contPresent.style.opacity = "1";
+
+        contSuma.style.opacity = '0';
+        contResta.style.opacity = '0';
+        contMultiplicacion.style.opacity = '0';
+        contDivision.style.opacity = '0';
+
+        arrowTop.style.transform = "translateY(0)";
+        arrowBottom.style.transform = "translateY(0)";
+        arrow2Left.style.transform = "translateX(0)";
+        arrow2rigth.style.transform = "translateX(0)";
+
+        if (acumbuttonAnimations == 2) {
+            
+        }
+
+        setTimeout(function() {
+            
+
+            setTimeout(() => {
+                
+            }, 100);
+        }, 1400);
+        acumButtonConfiguration--;
+
+    } else {
+        contConfiguration.style.transform = "translateY(-500px)";
+        contPresent.style.opacity = "1";
+
+        contSuma.style.opacity = '0';
+        contResta.style.opacity = '0';
+        contMultiplicacion.style.opacity = '0';
+        contDivision.style.opacity = '0';
+
+        arrowTop.style.transform = "translateY(0)";
+        arrowBottom.style.transform = "translateY(0)";
+        arrow2Left.style.transform = "translateX(0)";
+        arrow2rigth.style.transform = "translateX(0)";
+       
+        if (acumbuttonAnimations == 2) {
+            
+        }
+        acumButtonConfiguration--;
+    }
+}
+
+iconSetting.addEventListener ("click", mostrarConfiguracion)
+
+let acumContNote = 1;
+
+function moveRigth () {
     switch(acumArrowRigth) {
         case 1:
             contPresent.style.transform = "translateX(-900px)";
@@ -1030,6 +1586,7 @@ arrowRigth.addEventListener ("click", function(){
             arrowLeft.style.transform = "translateX(0)";
             acumArrowRigth++;
             acumDisplayArrow++
+            
 
             if (acumArrowLeft == 2) {
                 acumArrowLeft--;
@@ -1070,10 +1627,9 @@ arrowRigth.addEventListener ("click", function(){
             break;
     }
 
-})
+}
 
-arrowLeft.addEventListener ("click", function(){
-
+function moveLeft () {
     switch(acumArrowLeft) {
         case 1:
             contPresent.style.transform = "translateX(0)";
@@ -1116,7 +1672,148 @@ arrowLeft.addEventListener ("click", function(){
             acumArrowRigth--;
             acumDisplayArrow--;
             break;
+    }
+}
 
+let acumKeySuma = 1;
+let acumKeyResta = 1;
+let acumKeyMultiplicacion = 1;
+let acumKeyDivision = 1;
+
+document.addEventListener ("keyup", function(){
+
+    if (acumbuttonModoXeY == 1) {
+        if (event.keyCode == 39) {
+
+            if (acumButtonPreferencias == 1) {
+                
+            moveRigth();
+
+            }
+
+        } else if (event.keyCode == 37) {
+
+            if (acumArrowRigth > 1 && acumButtonPreferencias == 1) {
+                moveLeft();
+            }
+    
+        } else if (event.keyCode == 38) {
+            mostrarPreferencias();
+            acumButtonPreferencias = 2;
+
+        } else if (event.keyCode == 40) {
+            ocultarPreferencias(); 
+            acumButtonPreferencias = 1;
+        } 
+    } else if (acumbuttonModoXeY == 2) {
+        
+        if (event.keyCode == 38) {
+            
+            switch (acumKeySuma) {
+                case 1:
+                    mostrarSuma2();
+                    acumKeySuma++;
+                    acumKeyResta = 0;
+                    acumKeyMultiplicacion = 0;
+                    acumKeyDivision = 0;
+                    break;
+
+                case 2:
+                    ocultarSuma();
+                    acumKeySuma--;
+                    acumKeyResta = 1;
+                    acumKeyMultiplicacion = 1;
+                    acumKeyDivision = 1;
+                    break;
+            }
+
+        } else if (event.keyCode == 37) {
+
+            switch (acumKeyResta) {
+                case 1:
+                    mostrarResta2();
+                    acumKeyResta++;
+                    acumKeySuma = 0;
+                    acumKeyMultiplicacion = 0;
+                    acumKeyDivision = 0;
+                    break;
+
+                case 2:
+                    ocultarResta()
+                    acumKeyResta--;
+                    acumKeySuma = 1;
+                    acumKeyMultiplicacion = 1;
+                    acumKeyDivision = 1;
+                    break;
+            }
+
+        } else if (event.keyCode == 40) {
+            switch (acumKeyMultiplicacion) {
+                case 1:
+                    mostrarMultiplicacion2();
+                    acumKeyMultiplicacion++;
+                    acumKeySuma = 0;
+                    acumKeyResta = 0;
+                    acumKeyDivision = 0;
+                    break;
+
+                case 2:
+                    ocultarMultiplicacion()
+                    acumKeyMultiplicacion--;
+                    acumKeySuma = 1;
+                    acumKeyResta = 1;
+                    acumKeyDivision = 1;
+                    break;
+            }
+        } else if (event.keyCode == 39) {
+            switch (acumKeyDivision) {
+                case 1:
+                    mostrarDivision2();
+                    acumKeyDivision++;
+                    acumKeySuma = 0;
+                    acumKeyResta = 0;
+                    acumKeyMultiplicacion = 0;
+                    break;
+
+                case 2:
+                    ocultarDivision()
+                    acumKeyDivision--;
+                    acumKeySuma = 1;
+                    acumKeyResta = 1;
+                    acumKeyMultiplicacion = 1;
+                    break;
+            }
+        }
+    }
+
+}) 
+
+const containerNote = document.getElementById("container-note");
+
+arrowLeft.addEventListener ("click", function(){
+
+    moveLeft();
+
+})
+
+arrowRigth.addEventListener ("click", function(){
+
+    moveRigth();
+
+    acumContNote++;
+
+    if (acumContNote == 2) {
+        containerNote.style.transform ="translateY(0)";
+        containerNote.style.opacity = '1';
+        setTimeout(() => {
+            containerNote.style.transition = "all 1s, opacity 0.4s"
+            containerNote.style.transform ="translateY(-100px)";
+            containerNote.style.opacity = '0';
+        }, 5000);
+    }    
+
+    if (acumContNote == 5) {
+        acumContNote = 2;
     }
 
 })
@@ -1125,25 +1822,46 @@ arrowLeft.addEventListener ("click", function(){
 
 // Suma
 
-const images = document.querySelectorAll('#cont-suma__table1-img img');
+const tableSuma1 = document.querySelectorAll('#cont-suma__table1-img img');
+const tableSuma2 = document.querySelectorAll('#cont-suma__table2-img img');
 const inputSuma = document.getElementById("input-suma");
 const buttonSuma = document.getElementById("button-suma");
 
-let acumImgSuma = 24;
+let acumImgSuma1 = 12;
+let acumImgSuma2 = 12;
+let resultadoSuma = acumImgSuma1 + acumImgSuma2;
 
-for (var i = 0; i < images.length; i++) {
-    images[i].addEventListener('click', function() {
+for (var i = 0; i < tableSuma1.length; i++) {
+    tableSuma1[i].addEventListener('click', function() {
         if (this.classList.contains('selected')) {
 
             this.classList.remove('selected');
             this.style.opacity = '1';
-            acumImgSuma++;
+            acumImgSuma1++;
         } else {
 
             this.classList.add('selected');
             this.style.opacity = '0.3';
-            acumImgSuma--;
+            acumImgSuma1--;
         }
+        resultadoSuma = acumImgSuma1 + acumImgSuma2;
+    });
+}
+
+for (var j = 0; j < tableSuma2.length; j++) {
+    tableSuma2[j].addEventListener('click', function() {
+        if (this.classList.contains('selected')) {
+
+            this.classList.remove('selected');
+            this.style.opacity = '1';
+            acumImgSuma2++;
+        } else {
+
+            this.classList.add('selected');
+            this.style.opacity = '0.3';
+            acumImgSuma2--;
+        }
+        resultadoSuma = acumImgSuma1 + acumImgSuma2;
     });
 }
 
@@ -1161,6 +1879,13 @@ inputSuma.addEventListener ("input", function(){
 
 })
 
+inputSuma.addEventListener ("keyup", function(){
+
+    if (event.keyCode == 13) {
+        buttonSuma.click()
+    }
+})
+
 buttonSuma.addEventListener ("click", function(){
 
     if (inputSuma.value < 0) {
@@ -1171,7 +1896,7 @@ buttonSuma.addEventListener ("click", function(){
         buttonSuma.style.cursor = "default";
 
     } else {
-        if (inputSuma.value == acumImgSuma) {
+        if (inputSuma.value == resultadoSuma) {
             alert("Es correcto!");
             inputSuma.focus();
             inputSuma.value = "";
@@ -1191,28 +1916,50 @@ buttonSuma.addEventListener ("click", function(){
 
 // Resta
 
-const images2 = document.querySelectorAll('#cont-resta__table-img img');
+const tableResta1 = document.querySelectorAll('#cont-resta__table1-img img');
+const tableResta2 = document.querySelectorAll('#cont-resta__table2-img img');
 const inputResta = document.getElementById("input-resta");
 const buttonResta = document.getElementById("button-resta");
 
-let acumImgResta = 0;
-let acum2ImgResta = 0;
+let acumImgResta1 = 12;
+let acumImgResta2 = 12;
+let resultadoResta = acumImgResta1 - acumImgResta2
 
-for (var i = 0; i < images2.length; i++) {
-    images2[i].addEventListener('click', function() {
+for (var i = 0; i < tableResta1.length; i++) {
+    tableResta1[i].addEventListener('click', function() {
         if (this.classList.contains('selected')) {
 
             this.classList.remove('selected');
             this.style.opacity = '1';
-            acumImgResta++;
+            acumImgResta1++;
         } else {
 
             this.classList.add('selected');
             this.style.opacity = '0.3';
-            acum2ImgResta++;
+            acumImgResta1--;
         }
+        resultadoResta = acumImgResta1 - acumImgResta2
     });
 }
+
+for (var j = 0; j < tableResta2.length; j++) {
+    tableResta2[j].addEventListener('click', function() {
+        if (this.classList.contains('selected')) {
+
+            this.classList.remove('selected');
+            this.style.opacity = '1';
+            acumImgResta2++;
+        } else {
+
+            this.classList.add('selected');
+            this.style.opacity = '0.3';
+            acumImgResta2--;
+        }
+        resultadoResta = acumImgResta1 - acumImgResta2
+    });
+}
+
+
 
 inputResta.addEventListener ("input", function(){
 
@@ -1228,57 +1975,78 @@ inputResta.addEventListener ("input", function(){
 
 })
 
+
+inputResta.addEventListener ("keyup", function(){
+
+    if (event.keyCode == 13) {
+        buttonResta.click()
+    }
+})
+
 buttonResta.addEventListener ("click", function(){
 
-    if (inputResta.value < 0) {
-        alert("Debes ingresar numeros positivos");
+    if (inputResta.value == resultadoResta) {
+        alert("Es correcto!");
         inputResta.focus();
         inputResta.value = "";
         buttonResta.disabled = true;
         buttonResta.style.cursor = "default";
 
     } else {
-        if (inputResta.value == acumImgResta) {
-            alert("Es correcto!");
-            inputResta.focus();
-            inputResta.value = "";
-            buttonResta.disabled = true;
-            buttonResta.style.cursor = "default";
-    
-        } else {
-            alert("Es incorrecto, vuelve a intentarlo");
-            inputResta.focus();
-            inputResta.value = "";
-            buttonResta.disabled = true;
-            buttonResta.style.cursor = "default";
-        }
-    }   
+        alert("Es incorrecto, vuelve a intentarlo");
+        inputResta.focus();
+        inputResta.value = "";
+        buttonResta.disabled = true;
+        buttonResta.style.cursor = "default";
+    }
 
 })
 
 // Multiplicacion
 
-const images3 = document.querySelectorAll('#cont-multiplicacion__table-img img');
+const tableMultiplicacion1 = document.querySelectorAll('#cont-multiplicacion__table1-img img');
+const tableMultiplicacion2 = document.querySelectorAll('#cont-multiplicacion__table2-img img');
 const inputMultiplicacion = document.getElementById("input-multiplicacion");
 const buttonMultiplicacion = document.getElementById("button-multiplicacion");
 
-let acumImgMultiplicacion = 24;
+let acumImgMultiplicacion1 = 12;
+let acumImgMultiplicacion2 = 12;
+let resultadoMultiplicacion = acumImgMultiplicacion1 * acumImgMultiplicacion2;
 
-for (var i = 0; i < images3.length; i++) {
-    images3[i].addEventListener('click', function() {
+for (var i = 0; i < tableMultiplicacion1.length; i++) {
+    tableMultiplicacion1[i].addEventListener('click', function() {
         if (this.classList.contains('selected')) {
 
             this.classList.remove('selected');
             this.style.opacity = '1';
-            acumImgMultiplicacion++;
+            acumImgMultiplicacion1++;
         } else {
 
             this.classList.add('selected');
             this.style.opacity = '0.3';
-            acumImgMultiplicacion--;
+            acumImgMultiplicacion1--;
         }
+        resultadoMultiplicacion = acumImgMultiplicacion1 * acumImgMultiplicacion2;
     });
 }
+
+for (var j = 0; j < tableMultiplicacion2.length; j++) {
+    tableMultiplicacion2[j].addEventListener('click', function() {
+        if (this.classList.contains('selected')) {
+
+            this.classList.remove('selected');
+            this.style.opacity = '1';
+            acumImgMultiplicacion2++;
+        } else {
+
+            this.classList.add('selected');
+            this.style.opacity = '0.3';
+            acumImgMultiplicacion2--;
+        }
+        resultadoMultiplicacion = acumImgMultiplicacion1 * acumImgMultiplicacion2;
+    });
+}
+
 
 inputMultiplicacion.addEventListener ("input", function(){
 
@@ -1294,6 +2062,13 @@ inputMultiplicacion.addEventListener ("input", function(){
 
 })
 
+inputMultiplicacion.addEventListener ("keyup", function(){
+
+    if (event.keyCode == 13) {
+        buttonMultiplicacion.click()
+    }
+})
+
 buttonMultiplicacion.addEventListener ("click", function(){
 
     if (inputMultiplicacion.value < 0) {
@@ -1304,7 +2079,7 @@ buttonMultiplicacion.addEventListener ("click", function(){
         buttonMultiplicacion.style.cursor = "default";
 
     } else {
-        if (inputMultiplicacion.value == acumImgMultiplicacion) {
+        if (inputMultiplicacion.value == resultadoMultiplicacion) {
             alert("Es correcto!");
             inputMultiplicacion.focus();
             inputMultiplicacion.value = "";
@@ -1321,3 +2096,99 @@ buttonMultiplicacion.addEventListener ("click", function(){
     }   
 
 })
+
+// Division 
+
+const tableDivision1 = document.querySelectorAll('#cont-division__table1-img img');
+const tableDivision2 = document.querySelectorAll('#cont-division__table2-img img');
+const inputDivision = document.getElementById("input-division");
+const buttonDivision = document.getElementById("button-division");
+
+let acumImgDivision1 = 12;
+let acumImgDivision2 = 12;
+let resultadoDivision = acumImgDivision1 / acumImgDivision2;
+
+for (var i = 0; i < tableDivision1.length; i++) {
+    tableDivision1[i].addEventListener('click', function() {
+        if (this.classList.contains('selected')) {
+
+            this.classList.remove('selected');
+            this.style.opacity = '1';
+            acumImgDivision1++;
+        } else {
+
+            this.classList.add('selected');
+            this.style.opacity = '0.3';
+            acumImgDivision1--;
+        }
+        resultadoDivision = acumImgDivision1 / acumImgDivision2;
+    });
+}
+
+for (var j = 0; j < tableDivision2.length; j++) {
+    tableDivision2[j].addEventListener('click', function() {
+        if (this.classList.contains('selected')) {
+
+            this.classList.remove('selected');
+            this.style.opacity = '1';
+            acumImgDivision2++;
+        } else {
+
+            this.classList.add('selected');
+            this.style.opacity = '0.3';
+            acumImgDivision2--;
+        }
+        resultadoDivision = acumImgDivision1 / acumImgDivision2;
+    });
+}
+
+inputDivision.addEventListener ("input", function(){
+
+    if (inputDivision.value.length >= 1) {
+
+        buttonDivision.disabled = false;
+        buttonDivision.style.cursor = "pointer";
+        
+    } else {
+        buttonDivision.disabled = true;
+        buttonDivision.style.cursor = "default";
+    }
+
+})
+
+inputDivision.addEventListener ("keyup", function(){
+
+    if (event.keyCode == 13) {
+        buttonDivision.click()
+    }
+})
+
+buttonDivision.addEventListener ("click", function(){
+
+    if (inputDivision.value < 0) {
+        alert("Debes ingresar numeros positivos");
+        inputDivision.focus();
+        inputDivision.value = "";
+        buttonDivision.disabled = true;
+        buttonDivision.style.cursor = "default";
+
+    } else {
+        if (inputDivision.value == resultadoDivision) {
+            alert("Es correcto!");
+            inputDivision.focus();
+            inputDivision.value = "";
+            buttonDivision.disabled = true;
+            buttonDivision.style.cursor = "default";
+    
+        } else {
+            alert("Es incorrecto, vuelve a intentarlo");
+            inputDivision.focus();
+            inputDivision.value = "";
+            buttonDivision.disabled = true;
+            buttonDivision.style.cursor = "default";
+        }
+    }   
+
+})
+
+

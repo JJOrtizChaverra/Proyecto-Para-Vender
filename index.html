@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="./style.css" id="link">
 </head>
 <body>
+    <div class="container-note" id="container-note">
+        <p><span style="color:rgb(24, 146, 0);"><b>NOTA:</b></span> Puedes usar las flechas de tu teclado para desplazarte dinamicamente</p>
+    </div>
     <main class="main" id="main">
+
+        
+
         <div class="cont-arrows">
             <button class="arrow-left" id="arrow-left">&#8678;</button>
             <button class="arrow-rigth" id="arrow-rigth">&#8680;</button>
@@ -30,10 +36,10 @@
             <h2 class="cont-suma__title">Sumas con fresas</h2>
             <table id="cont-suma__table1-img">
                 <tr>
-                    <td><img src="./assets/img/fresas.png" alt="fresa 1"></td>
-                    <td><img src="./assets/img/fresas.png" alt="fresa 2"></td>
-                    <td><img src="./assets/img/fresas.png" alt="fresa 3"></td>
-                    <td><img src="./assets/img/fresas.png" alt="fresa 4"></td>
+                    <td><img src="./assets/img/fresas.png" alt="fresa 1" id="icono"></td>
+                    <td><img src="./assets/img/fresas.png" alt="fresa 2" id="icono"></td>
+                    <td><img src="./assets/img/fresas.png" alt="fresa 3" id="icono"></td>
+                    <td><img src="./assets/img/fresas.png" alt="fresa 4" id="icono"></td>
 
                     
                 </tr>
@@ -81,23 +87,19 @@
 
             <div class="cont-suma__cont-form">
                 <label for="">¿Cuantas fresas suman?</label>
-                <input type="number" id="input-suma">
+                <input type="text" id="input-suma">
                 <button id="button-suma" disabled>Comprobar</button>
             </div>
         </div>
 
         <div class="cont-resta" id="cont-resta">
             <h2 class="cont-resta__title">Resta con naranjas</h2>
-            <table id="cont-resta__table-img">
+            <table id="cont-resta__table1-img">
                 <tr>
                     <td><img src="./assets/img/naranjas.png" alt="naranja 1"></td>
                     <td><img src="./assets/img/naranjas.png" alt="naranja 2"></td>
                     <td><img src="./assets/img/naranjas.png" alt="naranja 3"></td>
-                    <td><img src="./assets/img/naranjas.png" alt="naranja 4"></td>
-
-                    <td></td>
-
-                    
+                    <td><img src="./assets/img/naranjas.png" alt="naranja 4"></td>           
                 </tr>
                 <tr>
                     <td><img src="./assets/img/naranjas.png" alt="naranja 5"></td>
@@ -115,13 +117,10 @@
                     <td><img src="./assets/img/naranjas.png" alt="naranja 11"></td>
                     <td><img src="./assets/img/naranjas.png" alt="naranja 12"></td>
                     
-                    <td></td>
-
-                    
                 </tr>
             </table>
 
-            <table>
+            <table id="cont-resta__table2-img">
                 <tr>
                     <td><img src="./assets/img/naranjas.png" alt="naranja 1"></td>
                     <td><img src="./assets/img/naranjas.png" alt="naranja 2"></td>
@@ -144,22 +143,15 @@
 
             <div class="cont-resta__cont-form">
                 <label for="">¿Cuantas naranjas restan?</label>
-                <input type="number" id="input-resta">
+                <input type="text" id="input-resta">
                 <button id="button-resta" disabled>Comprobar</button>
             </div>
         </div>
 
         <div class="cont-multiplicacion" id="cont-multiplicacion">
             <h2 class="cont-multiplicacion__title">Multiplicacion con uvas</h2>
-            <table id="cont-multiplicacion__table-img">
+            <table id="cont-multiplicacion__table1-img">
                 <tr>
-                    <td><img src="./assets/img/uvas.png" alt="uva 1"></td>
-                    <td><img src="./assets/img/uvas.png" alt="uva 2"></td>
-                    <td><img src="./assets/img/uvas.png" alt="uva 3"></td>
-                    <td><img src="./assets/img/uvas.png" alt="uva 4"></td>
-
-                    <td></td>
-
                     <td><img src="./assets/img/uvas.png" alt="uva 1"></td>
                     <td><img src="./assets/img/uvas.png" alt="uva 2"></td>
                     <td><img src="./assets/img/uvas.png" alt="uva 3"></td>
@@ -171,21 +163,31 @@
                     <td><img src="./assets/img/uvas.png" alt="uva 7"></td>
                     <td><img src="./assets/img/uvas.png" alt="uva 8"></td>
 
-                    <td>&#215;</td>
+                    <td class="ampersand-multiplicacion">&#215;</td>
 
-                    <td><img src="./assets/img/uvas.png" alt="uva 5"></td>
-                    <td><img src="./assets/img/uvas.png" alt="uva 6"></td>
-                    <td><img src="./assets/img/uvas.png" alt="uva 7"></td>
-                    <td><img src="./assets/img/uvas.png" alt="uva 8"></td>
                 </tr>
                 <tr>
                     <td><img src="./assets/img/uvas.png" alt="uva 9"></td>
                     <td><img src="./assets/img/uvas.png" alt="uva 10"></td>
                     <td><img src="./assets/img/uvas.png" alt="uva 11"></td>
                     <td><img src="./assets/img/uvas.png" alt="uva 12"></td>
-                    
-                    <td></td>
+                </tr>
+            </table>
 
+            <table id="cont-multiplicacion__table2-img">
+                <tr>
+                    <td><img src="./assets/img/uvas.png" alt="uva 1"></td>
+                    <td><img src="./assets/img/uvas.png" alt="uva 2"></td>
+                    <td><img src="./assets/img/uvas.png" alt="uva 3"></td>
+                    <td><img src="./assets/img/uvas.png" alt="uva 4"></td>
+                </tr>
+                <tr>
+                    <td><img src="./assets/img/uvas.png" alt="uva 5"></td>
+                    <td><img src="./assets/img/uvas.png" alt="uva 6"></td>
+                    <td><img src="./assets/img/uvas.png" alt="uva 7"></td>
+                    <td><img src="./assets/img/uvas.png" alt="uva 8"></td>
+                </tr>
+                <tr>
                     <td><img src="./assets/img/uvas.png" alt="uva 9"></td>
                     <td><img src="./assets/img/uvas.png" alt="uva 10"></td>
                     <td><img src="./assets/img/uvas.png" alt="uva 11"></td>
@@ -195,22 +197,15 @@
 
             <div class="cont-multiplicacion__cont-form">
                 <label for="">¿Cuantas uvas se multiplican?</label>
-                <input type="number" id="input-multiplicacion">
+                <input type="text" id="input-multiplicacion">
                 <button id="button-multiplicacion" disabled>Comprobar</button>
             </div>
         </div>
 
         <div class="cont-division" id="cont-division">
             <h2 class="cont-division__title">Division con bananas</h2>
-            <table id="cont-division__table-img">
+            <table id="cont-division__table1-img">
                 <tr>
-                    <td><img src="./assets/img/bananas.png" alt="banana 1"></td>
-                    <td><img src="./assets/img/bananas.png" alt="banana 2"></td>
-                    <td><img src="./assets/img/bananas.png" alt="banana 3"></td>
-                    <td><img src="./assets/img/bananas.png" alt="banana 4"></td>
-
-                    <td></td>
-
                     <td><img src="./assets/img/bananas.png" alt="banana 1"></td>
                     <td><img src="./assets/img/bananas.png" alt="banana 2"></td>
                     <td><img src="./assets/img/bananas.png" alt="banana 3"></td>
@@ -222,21 +217,10 @@
                     <td><img src="./assets/img/bananas.png" alt="banana 7"></td>
                     <td><img src="./assets/img/bananas.png" alt="banana 8"></td>
 
-                    <td>&#247;</td>
+                    <td class="ampersand-division">&#247;</td>
 
-                    <td><img src="./assets/img/bananas.png" alt="banana 5"></td>
-                    <td><img src="./assets/img/bananas.png" alt="banana 6"></td>
-                    <td><img src="./assets/img/bananas.png" alt="banana 7"></td>
-                    <td><img src="./assets/img/bananas.png" alt="banana 8"></td>
                 </tr>
                 <tr>
-                    <td><img src="./assets/img/bananas.png" alt="banana 9"></td>
-                    <td><img src="./assets/img/bananas.png" alt="banana 10"></td>
-                    <td><img src="./assets/img/bananas.png" alt="banana 11"></td>
-                    <td><img src="./assets/img/bananas.png" alt="banana 12"></td>
-
-                    <td></td>
-
                     <td><img src="./assets/img/bananas.png" alt="banana 9"></td>
                     <td><img src="./assets/img/bananas.png" alt="banana 10"></td>
                     <td><img src="./assets/img/bananas.png" alt="banana 11"></td>
@@ -244,9 +228,31 @@
                 </tr>
             </table>
 
+            <table id="cont-division__table2-img">
+                <tr>
+                    
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 1"></td>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 2"></td>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 3"></td>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 4"></td>
+                </tr>
+                <tr>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 5"></td>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 6"></td>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 7"></td>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 8"></td>
+                </tr>
+                <tr>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 9"></td>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 10"></td>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 11"></td>
+                    <td><img src="./assets/img/icons8-user-male-94.png" alt="persona 12"></td>
+                </tr>
+            </table>
+
             <div class="cont-division__cont-form">
                 <label for="">¿Cuantas bananas se dividen?</label>
-                <input type="number" id="input-division">
+                <input type="text" id="input-division">
                 <button id="button-division" disabled>Comprobar</button>
             </div>
         </div>
