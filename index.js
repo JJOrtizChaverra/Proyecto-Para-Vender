@@ -52,6 +52,10 @@ let acumButtonConfiguration = 1;
 let acumButtonPreferencias = 1;
 let acumDisplayArrow = 0;
 
+window.addEventListener('resize', function() {
+    
+})
+
 function mostrarPreferencias () {
     if (acumButtonTransitions == 2) {
         arrowConfiguration.style.display = 'none';
@@ -105,7 +109,23 @@ function mostrarPreferencias () {
 function ocultarPreferencias () {
     if (acumButtonTransitions == 2) {
 
-        contConfiguration.style.transform = "translateY(-1000px)";
+        
+        if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+            contConfiguration.style.transform = "translateY(-1500px)";
+
+        } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+            contConfiguration.style.transform = "translateY(-2000px)";
+
+        } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+            contConfiguration.style.transform = "translateY(-2500px)";
+
+        } else if (window.innerHeight >= 3400 && window.innerHeight < 4000) {
+            contConfiguration.style.transform = "translateY(-3000px)";
+
+        } else {
+            contConfiguration.style.transform = "translateY(-1000px)";
+        }
+
         contPresent.style.opacity = '1';
         contSuma.style.opacity = '1';
         contResta.style.opacity = '1';
@@ -147,7 +167,23 @@ function ocultarPreferencias () {
 
     } else {
         arrowLeft.style.transform = "translateX(0)";
-        contConfiguration.style.transform = "translateY(-1000px)";
+
+        if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+            contConfiguration.style.transform = "translateY(-1500px)";
+
+        } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+            contConfiguration.style.transform = "translateY(-2000px)";
+
+        } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+            contConfiguration.style.transform = "translateY(-2500px)";
+
+        } else if (window.innerHeight >= 3400 && window.innerHeight < 4000) {
+            contConfiguration.style.transform = "translateY(-3000px)";
+
+        } else {
+            contConfiguration.style.transform = "translateY(-1000px)";
+        }
+
         contPresent.style.opacity = '1';
         contSuma.style.opacity = '1';
         contResta.style.opacity = '1';
@@ -442,7 +478,22 @@ buttonModoXeY.addEventListener ("click", function(){
             arrowConfiguration2.style.display = "none";
             iconSetting.style.opacity = '1';
 
-            contConfiguration.style.transform = "translateY(-500px)"
+            if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+                contConfiguration.style.transform = "translateY(-1500px)";
+
+            } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+                contConfiguration.style.transform = "translateY(-2000px)";
+
+            } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+                contConfiguration.style.transform = "translateY(-2500px)";
+
+            } else if (window.innerHeight >= 3400) {
+                contConfiguration.style.transform = "translateY(-3000px)";
+
+            } else {
+                contConfiguration.style.transform = "translateY(-1000px)";
+            }
+
             contPresent.style.opacity = "1";
             arrowLeft.style.transform = "translateX(-200px)";
             arrowRigth.style.transform = "translateX(200px)";
@@ -455,11 +506,42 @@ buttonModoXeY.addEventListener ("click", function(){
         
 
             contSuma.style.transform = "translateX(0)"
-            contSuma.style.transform = "translateY(-500px)";
-            contResta.style.transform = "translateX(-900px)";
-            contMultiplicacion.style.transform = "translateX(500px)";
-            contMultiplicacion.style.transform = "translateY(500px)";
-            contDivision.style.transform = "translateX(900px)";
+            
+            if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+                contSuma.style.transform = "translateY(-1500px)";
+                contResta.style.transform = "translateX(-1500px)";
+                contMultiplicacion.style.transform = "translateX(0)";
+                contMultiplicacion.style.transform = "translateY(1500px)";
+                contDivision.style.transform = "translateX(1500px)";
+    
+            } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+                contSuma.style.transform = "translateY(-2000px)";
+                contResta.style.transform = "translateX(-2000px)";
+                contMultiplicacion.style.transform = "translateX(0)";
+                contMultiplicacion.style.transform = "translateY(2000px)";
+                contDivision.style.transform = "translateX(2000px)";
+    
+            } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+                contSuma.style.transform = "translateY(-2500px)";
+                contResta.style.transform = "translateX(-2500px)";
+                contMultiplicacion.style.transform = "translateX(0)";
+                contMultiplicacion.style.transform = "translateY(2500px)";
+                contDivision.style.transform = "translateX(2500px)";
+    
+            } else if (window.innerHeight >= 3400) {
+                contSuma.style.transform = "translateY(-3000px)";
+                contResta.style.transform = "translateX(-3000px)";
+                contMultiplicacion.style.transform = "translateX(0)";
+                contMultiplicacion.style.transform = "translateY(3000px)";
+                contDivision.style.transform = "translateX(3000px)";
+    
+            } else {
+                contSuma.style.transform = "translateY(-1000px)";
+                contResta.style.transform = "translateX(-1000px)";
+                contMultiplicacion.style.transform = "translateX(0)";
+                contMultiplicacion.style.transform = "translateY(1000px)";
+                contDivision.style.transform = "translateX(1000px)";
+            }
 
         } else {
             contPresent.style.transform = "translateX(0)";
@@ -475,7 +557,22 @@ buttonModoXeY.addEventListener ("click", function(){
             iconSetting.style.opacity = '1';
         }, 700);
 
-        contConfiguration.style.transform = "translateY(-500px)"
+        if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+            contConfiguration.style.transform = "translateY(-1500px)";
+
+        } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+            contConfiguration.style.transform = "translateY(-2000px)";
+
+        } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+            contConfiguration.style.transform = "translateY(-2500px)";
+
+        } else if (window.innerHeight >= 3400) {
+            contConfiguration.style.transform = "translateY(-3000px)";
+
+        } else {
+            contConfiguration.style.transform = "translateY(-1000px)";
+        }
+
         contPresent.style.opacity = "1";
         arrowLeft.style.transform = "translateX(-200px)";
         arrowRigth.style.transform = "translateX(200px)";
@@ -490,11 +587,44 @@ buttonModoXeY.addEventListener ("click", function(){
         }, 400)
 
         contSuma.style.transform = "translateX(0)"
-        contSuma.style.transform = "translateY(-500px)";
-        contResta.style.transform = "translateX(-900px)";
-        contMultiplicacion.style.transform = "translateX(500px)";
-        contMultiplicacion.style.transform = "translateY(500px)";
-        contDivision.style.transform = "translateX(900px)";
+        
+        if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+            contSuma.style.transform = "translateY(-1500px)";
+            contResta.style.transform = "translateX(-1500px)";
+            contMultiplicacion.style.transform = "translateX(0)";
+            contMultiplicacion.style.transform = "translateY(1500px)";
+            contDivision.style.transform = "translateX(1500px)";
+
+        } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+            contSuma.style.transform = "translateY(-2000px)";
+            contResta.style.transform = "translateX(-2000px)";
+            contMultiplicacion.style.transform = "translateX(0)";
+            contMultiplicacion.style.transform = "translateY(2000px)";
+            contDivision.style.transform = "translateX(2000px)";
+
+        } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+            contSuma.style.transform = "translateY(-2500px)";
+            contResta.style.transform = "translateX(-2500px)";
+            contMultiplicacion.style.transform = "translateX(0)";
+            contMultiplicacion.style.transform = "translateY(2500px)";
+            contDivision.style.transform = "translateX(2500px)";
+
+        } else if (window.innerHeight >= 3400) {
+            contSuma.style.transform = "translateY(-3000px)";
+            contResta.style.transform = "translateX(-3000px)";
+            contMultiplicacion.style.transform = "translateX(0)";
+            contMultiplicacion.style.transform = "translateY(3000px)";
+            contDivision.style.transform = "translateX(3000px)";
+
+        } else {
+            contSuma.style.transform = "translateY(-1000px)";
+            contResta.style.transform = "translateX(-1000px)";
+            contMultiplicacion.style.transform = "translateX(0)";
+            contMultiplicacion.style.transform = "translateY(1000px)";
+            contDivision.style.transform = "translateX(1000px)";
+        }
+
+        
         }
         acumbuttonModoXeY++;
         acumButtonConfiguration = 1;
@@ -633,7 +763,23 @@ function mostrarSuma () {
             if (acumButtonTransitions == 1) {
                 contPresent.style.opacity = '1';
                 contSuma.style.opacity = '0';
-                contSuma.style.transform = "translateY(-500px)";
+                
+                if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+                    contSuma.style.transform = "translateY(-1500px)";
+        
+                } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+                    contSuma.style.transform = "translateY(-2000px)";
+        
+                } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+                    contSuma.style.transform = "translateY(-2500px)";
+        
+                } else if (window.innerHeight >= 3400) {
+                    contSuma.style.transform = "translateY(-3000px)";
+        
+                } else {
+                    contSuma.style.transform = "translateY(-1000px)";
+                }
+
                 arrowTop.style.transform = "translateY(-200px)"
 
                 iconSetting.style.display = "block";
@@ -650,7 +796,23 @@ function mostrarSuma () {
             } else {
                 contPresent.style.opacity = '1';
                 contSuma.style.opacity = '0';
-                contSuma.style.transform = "translateY(-500px)";
+                
+                if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+                    contSuma.style.transform = "translateY(-1500px)";
+        
+                } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+                    contSuma.style.transform = "translateY(-2000px)";
+        
+                } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+                    contSuma.style.transform = "translateY(-2500px)";
+        
+                } else if (window.innerHeight >= 3400) {
+                    contSuma.style.transform = "translateY(-3000px)";
+        
+                } else {
+                    contSuma.style.transform = "translateY(-1000px)";
+                }
+
                 arrowTop.style.transform = "translateY(-200px)"
 
                 iconSetting.style.display = "block";
@@ -734,7 +896,23 @@ function ocultarSuma () {
     if (acumButtonTransitions == 1) {
         contPresent.style.opacity = '1';
         contSuma.style.opacity = '0';
-        contSuma.style.transform = "translateY(-500px)";
+        
+        if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+            contSuma.style.transform = "translateY(-1500px)";
+
+        } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+            contSuma.style.transform = "translateY(-2000px)";
+
+        } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+            contSuma.style.transform = "translateY(-2500px)";
+
+        } else if (window.innerHeight >= 3400) {
+            contSuma.style.transform = "translateY(-3000px)";
+
+        } else {
+            contSuma.style.transform = "translateY(-1000px)";
+        }
+
         arrowTop.style.transform = "translateY(-200px)"
 
         iconSetting.style.display = "block";
@@ -751,7 +929,23 @@ function ocultarSuma () {
     } else {
         contPresent.style.opacity = '1';
         contSuma.style.opacity = '0';
-        contSuma.style.transform = "translateY(-500px)";
+        
+        if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+            contSuma.style.transform = "translateY(-1500px)";
+
+        } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+            contSuma.style.transform = "translateY(-2000px)";
+
+        } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+            contSuma.style.transform = "translateY(-2500px)";
+
+        } else if (window.innerHeight >= 3400) {
+            contSuma.style.transform = "translateY(-3000px)";
+
+        } else {
+            contSuma.style.transform = "translateY(-1000px)";
+        }
+        
         arrowTop.style.transform = "translateY(-200px)"
 
         iconSetting.style.display = "block";
@@ -1424,7 +1618,23 @@ function mostrarConfiguracion () {
 
         case 2:
             if (acumButtonTransitions == 2) {
-                contConfiguration.style.transform = "translateY(-500px)";
+                
+                if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+                    contConfiguration.style.transform = "translateY(-1500px)";
+    
+                } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+                    contConfiguration.style.transform = "translateY(-2000px)";
+    
+                } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+                    contConfiguration.style.transform = "translateY(-2500px)";
+    
+                } else if (window.innerHeight >= 3400) {
+                    contConfiguration.style.transform = "translateY(-3000px)";
+    
+                } else {
+                    contConfiguration.style.transform = "translateY(-1000px)";
+                }
+
                 contPresent.style.opacity = "1";
         
                 contSuma.style.opacity = '0';
@@ -1451,7 +1661,23 @@ function mostrarConfiguracion () {
                 acumButtonConfiguration--;
 
             } else {
-                contConfiguration.style.transform = "translateY(-500px)";
+                
+                if (window.innerWidth >= 1500 && window.innerWidth < 2300) {
+                    contConfiguration.style.transform = "translateY(-1500px)";
+    
+                } else if (window.innerWidth >= 2300 && window.innerWidth < 3200) {
+                    contConfiguration.style.transform = "translateY(-2000px)";
+    
+                } else if (window.innerWidth >= 3200 && window.innerWidth < 4000) {
+                    contConfiguration.style.transform = "translateY(-2500px)";
+    
+                } else if (window.innerWidth >= 4000) {
+                    contConfiguration.style.transform = "translateY(-3000px)";
+    
+                } else {
+                    contConfiguration.style.transform = "translateY(-1000px)";
+                }
+
                 contPresent.style.opacity = "1";
 
                 contSuma.style.opacity = '0';
@@ -1524,7 +1750,23 @@ function mostrarConfiguracion2 () {
 
 function ocultarConfiguracion () {
     if (acumButtonTransitions == 2) {
-        contConfiguration.style.transform = "translateY(-500px)";
+        
+        if (window.innerHeight >= 1300 && window.innerHeight < 2000) {
+            contConfiguration.style.transform = "translateY(-1500px)";
+
+        } else if (window.innerHeight >= 2000 && window.innerHeight < 2700) {
+            contConfiguration.style.transform = "translateY(-2000px)";
+
+        } else if (window.innerHeight >= 2700 && window.innerHeight < 3400) {
+            contConfiguration.style.transform = "translateY(-2500px)";
+
+        } else if (window.innerHeight >= 3400) {
+            contConfiguration.style.transform = "translateY(-3000px)";
+
+        } else {
+            contConfiguration.style.transform = "translateY(-1000px)";
+        }
+
         contPresent.style.opacity = "1";
 
         contSuma.style.opacity = '0';
@@ -1578,7 +1820,22 @@ let acumContNote = 1;
 function moveRigth () {
     switch(acumArrowRigth) {
         case 1:
-            contPresent.style.transform = "translateX(-900px)";
+            if (window.innerWidth >= 1500 && window.innerWidth < 2300) {
+                contPresent.style.transform = "translateX(-1500px)";
+
+            } else if (window.innerWidth >= 2300 && window.innerWidth < 3200) {
+                contPresent.style.transform = "translateX(-2000px)";
+
+            } else if (window.innerWidth >= 3200 && window.innerWidth < 4000) {
+                contPresent.style.transform = "translateX(-2500px)";
+
+            } else if (window.innerWidth >= 4000) {
+                contPresent.style.transform = "translateX(-3000px)";
+
+            } else {
+                contPresent.style.transform = "translateX(-1000px)";
+            }
+
             contPresent.style.opacity = '0';
             contSuma.style.transform = "translateX(0)";
             contSuma.style.opacity = '1';
@@ -1594,7 +1851,23 @@ function moveRigth () {
             break;
 
         case 2:
-            contSuma.style.transform = "translateX(-900px)";
+            
+            if (window.innerWidth >= 1500 && window.innerWidth < 2300) {
+                contSuma.style.transform = "translateX(-1500px)";
+
+            } else if (window.innerWidth >= 2300 && window.innerWidth < 3200) {
+                contSuma.style.transform = "translateX(-2000px)";
+
+            } else if (window.innerWidth >= 3200 && window.innerWidth < 4000) {
+                contSuma.style.transform = "translateX(-2500px)";
+
+            } else if (window.innerWidth >= 4000) {
+                contSuma.style.transform = "translateX(-3000px)";
+
+            } else {
+                contSuma.style.transform = "translateX(-1000px)";
+            }
+
             contSuma.style.opacity = '0';
             contResta.style.transform = "translateX(0)";
             contResta.style.opacity = '1';
@@ -1604,7 +1877,23 @@ function moveRigth () {
             break;
 
         case 3:
-            contResta.style.transform = "translateX(-900px)";
+            
+            if (window.innerWidth >= 1500 && window.innerWidth < 2300) {
+                contResta.style.transform = "translateX(-1500px)";
+
+            } else if (window.innerWidth >= 2300 && window.innerWidth < 3200) {
+                contResta.style.transform = "translateX(-2000px)";
+
+            } else if (window.innerWidth >= 3200 && window.innerWidth < 4000) {
+                contResta.style.transform = "translateX(-2500px)";
+
+            } else if (window.innerWidth >= 4000) {
+                contResta.style.transform = "translateX(-3000px)";
+
+            } else {
+                contResta.style.transform = "translateX(-1000px)";
+            }
+
             contResta.style.opacity = '0';
             contMultiplicacion.style.transform = "translateX(0)";
             contMultiplicacion.style.opacity = '1';
@@ -1614,7 +1903,23 @@ function moveRigth () {
             break;
 
         case 4:
-            contMultiplicacion.style.transform = "translateX(-900px)";
+            
+            if (window.innerWidth >= 1500 && window.innerWidth < 2300) {
+                contMultiplicacion.style.transform = "translateX(-1500px)";
+
+            } else if (window.innerWidth >= 2300 && window.innerWidth < 3200) {
+                contMultiplicacion.style.transform = "translateX(-2000px)";
+
+            } else if (window.innerWidth >= 3200 && window.innerWidth < 4000) {
+                contMultiplicacion.style.transform = "translateX(-2500px)";
+
+            } else if (window.innerWidth >= 4000) {
+                contMultiplicacion.style.transform = "translateX(-3000px)";
+
+            } else {
+                contMultiplicacion.style.transform = "translateX(-1000px)";
+            }
+
             contMultiplicacion.style.opacity = '0';
             contDivision.style.transform = "translateX(0)";
             contDivision.style.opacity = '1';
@@ -1634,7 +1939,23 @@ function moveLeft () {
         case 1:
             contPresent.style.transform = "translateX(0)";
             contPresent.style.opacity = '1';
-            contSuma.style.transform = "translateX(900px)";
+            
+            if (window.innerWidth >= 1500 && window.innerWidth < 2300) {
+                contSuma.style.transform = "translateX(1500px)";
+
+            } else if (window.innerWidth >= 2300 && window.innerWidth < 3200) {
+                contSuma.style.transform = "translateX(2000px)";
+
+            } else if (window.innerWidth >= 3200 && window.innerWidth < 4000) {
+                contSuma.style.transform = "translateX(2500px)";
+
+            } else if (window.innerWidth >= 4000) {
+                contSuma.style.transform = "translateX(3000px)";
+
+            } else {
+                contSuma.style.transform = "translateX(1000px)";
+            }
+
             contSuma.style.opacity = '0';
             arrowLeft.style.display = "none";
             acumArrowLeft++;
@@ -1645,7 +1966,23 @@ function moveLeft () {
         case 2:
             contSuma.style.transform = "translateX(0)";
             contSuma.style.opacity = '1';
-            contResta.style.transform = "translateX(900px)";
+            
+            if (window.innerWidth >= 1500 && window.innerWidth < 2300) {
+                contResta.style.transform = "translateX(1500px)";
+
+            } else if (window.innerWidth >= 2300 && window.innerWidth < 3200) {
+                contResta.style.transform = "translateX(2000px)";
+
+            } else if (window.innerWidth >= 3200 && window.innerWidth < 4000) {
+                contResta.style.transform = "translateX(2500px)";
+
+            } else if (window.innerWidth >= 4000) {
+                contResta.style.transform = "translateX(3000px)";
+
+            } else {
+                contResta.style.transform = "translateX(1000px)";
+            }
+
             contResta.style.opacity = '0';
             acumArrowLeft--;
             acumArrowRigth--;
@@ -1655,7 +1992,23 @@ function moveLeft () {
         case 3:
             contResta.style.transform = "translateX(0)";
             contResta.style.opacity = '1';
-            contMultiplicacion.style.transform = "translateX(900px)";
+            
+            if (window.innerWidth >= 1500 && window.innerWidth < 2300) {
+                contMultiplicacion.style.transform = "translateX(1500px)";
+
+            } else if (window.innerWidth >= 2300 && window.innerWidth < 3200) {
+                contMultiplicacion.style.transform = "translateX(2000px)";
+
+            } else if (window.innerWidth >= 3200 && window.innerWidth < 4000) {
+                contMultiplicacion.style.transform = "translateX(2500px)";
+
+            } else if (window.innerWidth >= 4000) {
+                contMultiplicacion.style.transform = "translateX(3000px)";
+
+            } else {
+                contMultiplicacion.style.transform = "translateX(1000px)";
+            }
+
             contMultiplicacion.style.opacity = '0';
             acumArrowLeft--;
             acumArrowRigth--;
@@ -1665,7 +2018,23 @@ function moveLeft () {
         case 4:
             contMultiplicacion.style.transform = "translateX(0)";
             contMultiplicacion.style.opacity = '1';
-            contDivision.style.transform = "translateX(900px)";
+            
+            if (window.innerWidth >= 1500 && window.innerWidth < 2300) {
+                contDivision.style.transform = "translateX(1500px)";
+
+            } else if (window.innerWidth >= 2300 && window.innerWidth < 3200) {
+                contDivision.style.transform = "translateX(2000px)";
+
+            } else if (window.innerWidth >= 3200 && window.innerWidth < 4000) {
+                contDivision.style.transform = "translateX(2500px)";
+
+            } else if (window.innerWidth >= 4000) {
+                contDivision.style.transform = "translateX(3000px)";
+
+            } else {
+                contDivision.style.transform = "translateX(1000px)";
+            }
+
             contDivision.style.opacity = '0';
             arrowRigth.style.display = "block";
             acumArrowLeft--;

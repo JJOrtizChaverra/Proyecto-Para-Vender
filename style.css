@@ -460,7 +460,7 @@ body {
     border-bottom-left-radius: 60px;
     border-top-right-radius: 60px;
     box-shadow: none;
-    transform: translateX(900px);
+    transform: translateX(1000px);
     opacity: 0;
     transition: none;
 }
@@ -570,7 +570,7 @@ body {
     border-bottom-left-radius: 60px;
     border-top-right-radius: 60px;
     box-shadow: none;
-    transform: translateX(900px);
+    transform: translateX(1000px);
     opacity: 0;
     transition: none;
 }
@@ -680,7 +680,7 @@ body {
     border-bottom-left-radius: 60px;
     border-top-right-radius: 60px;
     box-shadow: none;
-    transform: translateX(900px);
+    transform: translateX(1000px);
     opacity: 0;
     transition: none;
 }
@@ -790,7 +790,7 @@ body {
     border-bottom-left-radius: 60px;
     border-top-right-radius: 60px;
     box-shadow: none;
-    transform: translateX(900px);
+    transform: translateX(1000px);
     opacity: 0;
     transition: none;
 }
@@ -901,13 +901,17 @@ body {
     border-bottom-left-radius: 60px;
     border-top-right-radius: 60px;
     box-shadow: none;
-    transform: translateY(-500px);
+    transform: translateY(-1000px);
     transition: none;
 }
 
 .cont-configuration:hover {
     width: 80%;
     height: 85%;
+}
+
+.cont-configuration h2 {
+    align-self: center;
 }
 
 .cont-configuration h2 {
@@ -1101,6 +1105,41 @@ body {
 
 }
 
+@media (max-width: 1100px) {
+    .arrow2-left {
+        font-size: 15px;
+    }
+
+    .arrow2-left p {
+        font-size: 22px;
+        left: -5px;
+        top: -4.5px;
+    }
+
+    .arrow2-rigth {
+        font-size: 15px;
+    }
+
+    .arrow2-rigth p {
+        font-size: 22px;
+        left: -7px;
+        top: -4.5px;
+    }
+
+    .arrow2-rigth p:hover {
+        font-size: 25px;
+        top: -7.5px;
+        left: -5px;
+    }
+
+    .arrow2-left p:hover {
+        font-size: 25px;
+        top: -7.5px;
+        left: -9px;
+    }
+}
+
+
 @media (max-width: 900px) {
 
     .ampersand-suma {
@@ -1173,6 +1212,39 @@ body {
     .cont-division button {
         font-size: 10px;
         font-weight: 900;
+    }
+
+    .arrow2-left {
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+    .arrow2-left p {
+        font-size: 18px;
+        left: -18px;
+    }
+
+    .arrow2-rigth {
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+    .arrow2-rigth p {
+        font-size: 18px;
+        top: -5px;
+        left: -5px;
+    }
+
+    .arrow2-rigth p:hover {
+        font-size: 22px;
+        top: -7px;
+        left: -2px;
+    }
+
+    .arrow2-left p:hover {
+        font-size: 21px;
+        top: -7px;
+        left: -20px;
     }
 
 }
@@ -1310,6 +1382,38 @@ body {
     .cont-suma button, .cont-resta button, .cont-multiplicacion button, .cont-division button {
         font-size: 13px;
     }
+
+    .arrow2-left {
+        font-size: 15px;
+    }
+
+    .arrow2-left p {
+        font-size: 22px;
+        left: -5px;
+        top: -4.5px;
+    }
+
+    .arrow2-rigth {
+        font-size: 15px;
+    }
+
+    .arrow2-rigth p {
+        font-size: 22px;
+        left: -12px;
+        top: -4.5px;
+    }
+
+    .arrow2-rigth p:hover {
+        font-size: 25px;
+        top: -7.5px;
+        left: -9px;
+    }
+
+    .arrow2-left p:hover {
+        font-size: 25px;
+        top: -7.5px;
+        left: -9px;
+    }
 }
 
 @media (max-width: 650px) {
@@ -1338,6 +1442,38 @@ body {
         font-size: 11.5px;
     }
 
+    .arrow2-left {
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+    .arrow2-left p {
+        font-size: 18px;
+        left: -18px;
+    }
+
+    .arrow2-rigth {
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+    .arrow2-rigth p {
+        font-size: 18px;
+        left: -8px;
+    }
+
+    .arrow2-rigth p:hover {
+        font-size: 22px;
+        top: -7px;
+        left: -6px;
+    }
+
+    .arrow2-left p:hover {
+        font-size: 21px;
+        top: -7px;
+        left: -20px;
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -1346,7 +1482,7 @@ body {
     }
 }
 
-@media (max-width: 560px) {
+/* @media (max-width: 560px) {
     .ampersand-suma, .ampersand-resta, .ampersand-multiplicacion, .ampersand-division {
         bottom: 42%;
         left: 22.1%;
@@ -1370,11 +1506,20 @@ body {
     .cont-suma button, .cont-resta button, .cont-multiplicacion button, .cont-division button {
         font-size: 10px;
     }
-}
+} */
 
 /*Estilo telefonos*/
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
+
+    .cont-other-mode {
+        display: none;
+    }
+
+    .cont-box-float {
+        display: none;
+    }
+
     .cont-suma, .cont-resta, .cont-multiplicacion, .cont-division, .cont-configuration, .cont-present {
         width: 100%;
         height: 100%;
@@ -1432,8 +1577,8 @@ body {
     }
 
     .cont-suma label, .cont-resta label, .cont-multiplicacion label, .cont-division label {
-        width: 200px;
-        margin-bottom: 45px;
+        width: 300px;
+        margin-bottom: 55px;
     }
 
     .cont-suma:hover {
@@ -1464,5 +1609,181 @@ body {
     .cont-configuration:hover {
         width: 100%;
         height: 100%;
+    }
+
+    .arrow-rigth:hover {
+        font-size: 60px;
+    }
+
+    .arrow-left:hover {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    .cont-suma img, .cont-resta img, .cont-multiplicacion img, .cont-division img {
+        width: 30px;
+    }
+}
+
+@media (max-width: 375px) {
+    .cont-dark-mode {
+        grid-column: 1/3;
+    }
+
+    .cont-shadows {
+        grid-column: 1/3;
+    }
+
+    .cont-animations {
+        grid-column: 1/3;
+    }
+
+    .cont-transitions {
+        grid-column: 1/3;
+    }
+}
+
+@media (max-width: 350px) {
+    .cont-suma img, .cont-resta img, .cont-multiplicacion img, .cont-division img {
+        width: 27px;
+    }
+
+    .ampersand-suma, .ampersand-resta, .ampersand-multiplicacion, .ampersand-division {
+        left: 46.2%;
+    }
+
+    .cont-multiplicacion__title {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 325px) {
+
+
+    #cont-suma__table1-img, #cont-resta__table1-img, #cont-multiplicacion__table1-img, #cont-division__table1-img  {
+        width: 100px;
+    }
+
+    #cont-suma__table2-img, #cont-resta__table2-img, #cont-multiplicacion__table2-img, #cont-division__table2-img  {
+        width: 100px;
+    }
+
+    .arrow-left:hover {
+        font-size: 50px;
+    }
+
+    .arrow-rigth:hover {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 280px) {
+
+    .cont-suma__title, .cont-resta__title, .cont-multiplicacion__title, .cont-division__title {
+        font-size: 25px;
+    }
+
+    .ampersand-suma, .ampersand-resta, .ampersand-multiplicacion, .ampersand-division {
+        font-size: 25px;
+        top: 30%;
+        left: 47%;
+    }
+
+    .cont-suma__cont-form, .cont-resta__cont-form, .cont-multiplicacion__cont-form, .cont-division__cont-form {
+        position: relative;
+        right: 11px;
+    }
+
+    .cont-suma label, .cont-resta label, .cont-multiplicacion label, .cont-division label {
+        font-size: 15px;
+    }
+
+    .cont-suma input, .cont-resta input, .cont-multiplicacion input, .cont-division input {
+        width: 180px;
+    }
+
+    .cont-suma button, .cont-resta button, .cont-multiplicacion button, .cont-division button {
+        font-size: 10px;
+    }
+
+    .cont-suma img, .cont-resta img, .cont-multiplicacion img, .cont-division img {
+        width: 23px;
+    }
+
+    #cont-suma__table1-img, #cont-resta__table1-img, #cont-multiplicacion__table1-img, #cont-division__table1-img {
+        height: 25px;
+        margin-top: 20px;
+    }
+
+    #cont-suma__table2-img, #cont-resta__table2-img, #cont-multiplicacion__table2-img, #cont-division__table2-img {
+        height: 25px;
+        margin-top: 20px;
+    }
+
+    .cont-multiplicacion__title {
+        font-size: 20px;
+    }
+
+    .ampersand-multiplicacion, .ampersand-division, .ampersand-resta, .ampersand-suma {
+        top: 29.2%;
+    }
+}
+
+@media (max-width: 250px) {
+    .cont-suma__cont-form, .cont-resta__cont-form, .cont-multiplicacion__cont-form, .cont-division__cont-form {
+        right: 23px;
+    }
+}
+
+/*Alto cajas*/
+
+@media (min-height: 1300px) {
+    .cont-configuration {
+        transform: translateY(-1500px);
+    }
+}
+
+@media (min-height: 2000px) {
+    .cont-configuration {
+        transform: translateY(-2000px);
+    }
+}
+
+@media (min-height: 2700px) {
+    .cont-configuration {
+        transform: translateY(-2500px);
+    }
+}
+
+@media (min-height: 3400px) {
+    .cont-configuration {
+        transform: translateY(-3000px);
+    }
+}
+
+/*Ancho cajas*/
+
+@media (min-width: 1500px) {
+    .cont-suma, .cont-resta, .cont-multiplicacion, .cont-division {
+        transform: translateX(1500px);
+    }
+}
+
+@media (min-width: 2300px) {
+    .cont-suma, .cont-resta, .cont-multiplicacion, .cont-division {
+        transform: translateX(2000px);
+    }
+}
+
+@media (min-width: 3200px) {
+    .cont-suma, .cont-resta, .cont-multiplicacion, .cont-division {
+        transform: translateX(2500px);
+    }
+}
+
+@media (min-width: 4000px) {
+    .cont-suma, .cont-resta, .cont-multiplicacion, .cont-division {
+        transform: translateX(3000px);
     }
 }
