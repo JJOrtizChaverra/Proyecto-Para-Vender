@@ -1,4 +1,4 @@
-# Matematicas-para-niños
+# Proyecto para vender
 
 
 var contenedor = imagenActual.parentNode;
