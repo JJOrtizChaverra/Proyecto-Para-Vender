@@ -236,7 +236,9 @@ buttonShadows.addEventListener("click", function() {
     
     switch(acumbuttonShadows) {
         case 1:
-            main.style.boxShadow = "-15px 15px 20px 20px rgb(65, 65, 65)";
+
+            if (buttonDarkMode == 2) {
+                main.style.boxShadow = "-15px 15px 20px 20px rgb(65, 65, 65)";
             contConfiguration.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
             contPresent.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
             contSuma.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
@@ -254,6 +256,30 @@ buttonShadows.addEventListener("click", function() {
             for (var i = 0; i < inputs.length; i++) {
                 inputs[i].style.boxShadow = "-3px 3px 5px 1px rgb(65, 65, 65)";
             }
+
+            } else {
+                main.style.boxShadow = "-15px 15px 20px 20px rgb(65, 65, 65)";
+            contConfiguration.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+            contPresent.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+            contSuma.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+            contResta.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+            contMultiplicacion.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+            contDivision.style.boxShadow = "-10px 10px 10px 7px rgb(77, 77, 77)";
+
+            for (var i = 0; i < buttons.length; i++) {
+
+                if (i >= 9)  {
+                    buttons[i].style.boxShadow = "-3px 3px 5px 1px rgb(65, 65, 65)";
+                }
+            }
+
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].style.boxShadow = "-3px 3px 5px 1px rgb(65, 65, 65)";
+            }
+
+            }
+
+            
             
             acumbuttonShadows++;
             break;
@@ -1848,6 +1874,22 @@ function moveRigth () {
             if (acumArrowLeft == 2) {
                 acumArrowLeft--;
             } 
+
+            acumContNote++;
+
+            if (acumContNote == 2) {
+                containerNote.style.transform ="translateY(0)";
+                containerNote.style.opacity = '1';
+                setTimeout(() => {
+                    containerNote.style.transition = "all 1s, opacity 0.4s"
+                    containerNote.style.transform ="translateY(-100px)";
+                    containerNote.style.opacity = '0';
+                }, 5000);
+            }    
+        
+            if (acumContNote == 5) {
+                acumContNote = 2;
+            }
             break;
 
         case 2:
@@ -2168,22 +2210,6 @@ arrowLeft.addEventListener ("click", function(){
 arrowRigth.addEventListener ("click", function(){
 
     moveRigth();
-
-    acumContNote++;
-
-    if (acumContNote == 2) {
-        containerNote.style.transform ="translateY(0)";
-        containerNote.style.opacity = '1';
-        setTimeout(() => {
-            containerNote.style.transition = "all 1s, opacity 0.4s"
-            containerNote.style.transform ="translateY(-100px)";
-            containerNote.style.opacity = '0';
-        }, 5000);
-    }    
-
-    if (acumContNote == 5) {
-        acumContNote = 2;
-    }
 
 })
 
