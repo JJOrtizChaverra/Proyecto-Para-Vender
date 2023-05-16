@@ -105,7 +105,7 @@ function mostrarPreferencias () {
 function ocultarPreferencias () {
     if (acumButtonTransitions == 2) {
 
-        contConfiguration.style.transform = "translateY(-500px)";
+        contConfiguration.style.transform = "translateY(-1000px)";
         contPresent.style.opacity = '1';
         contSuma.style.opacity = '1';
         contResta.style.opacity = '1';
@@ -147,7 +147,7 @@ function ocultarPreferencias () {
 
     } else {
         arrowLeft.style.transform = "translateX(0)";
-        contConfiguration.style.transform = "translateY(-500px)";
+        contConfiguration.style.transform = "translateY(-1000px)";
         contPresent.style.opacity = '1';
         contSuma.style.opacity = '1';
         contResta.style.opacity = '1';

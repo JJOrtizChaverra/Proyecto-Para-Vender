@@ -472,6 +472,7 @@ body {
 
 .cont-suma__title {
     text-align: center;
+    align-self: center;
     grid-column: 1/5;
     font-size: 28px;
 }
@@ -582,6 +583,7 @@ body {
 .cont-resta__title {
     text-align: center;
     grid-column: 1/5;
+    align-self: center;
     font-size: 28px;
 }
 
@@ -691,6 +693,7 @@ body {
 .cont-multiplicacion__title {
     text-align: center;
     grid-column: 1/5;
+    align-self: center;
     font-size: 28px;
 }
 
@@ -800,6 +803,7 @@ body {
 .cont-division__title {
     text-align: center;
     grid-column: 1/5;
+    align-self: center;
     font-size: 28px;
 }
 
@@ -1002,4 +1006,463 @@ body {
     opacity: 0;
     transform: translateY(-100px);
     transition: all 1s, opacity 2s;
+}
+
+@media (max-width: 1000px) {
+    .ampersand-suma {
+        left: 22%;
+    }
+
+    .cont-suma img {
+        width: 30px;
+    }
+
+    .cont-suma label {
+        font-size: 15px;
+        font-weight: 900;
+    }
+
+    .cont-suma input {
+        width: 200px;
+    }
+
+    .cont-suma button {
+        font-size: 11px;
+        font-weight: 900;
+    }
+
+    .ampersand-resta {
+        left: 22%;
+    }
+
+    .cont-resta img {
+        width: 30px;
+    }
+
+    .cont-resta label {
+        font-size: 15px;
+        font-weight: 900;
+    }
+
+    .cont-resta input {
+        width: 200px;
+    }
+
+    .cont-resta button {
+        font-size: 11px;
+        font-weight: 900;
+    }
+
+    /*--------------------*/
+
+    .ampersand-multiplicacion {
+        left: 22%;
+    }
+
+    .cont-multiplicacion img {
+        width: 30px;
+    }
+
+    .cont-multiplicacion label {
+        font-size: 15px;
+        font-weight: 900;
+    }
+
+    .cont-multiplicacion input {
+        width: 200px;
+    }
+
+    .cont-multiplicacion button {
+        font-size: 11px;
+        font-weight: 900;
+    }
+
+    .ampersand-division {
+        left: 22%;
+    }
+
+    .cont-division img {
+        width: 30px;
+    }
+
+    .cont-division label {
+        font-size: 15px;
+        font-weight: 900;
+    }
+
+    .cont-division input {
+        width: 200px;
+    }
+
+    .cont-division button {
+        font-size: 11px;
+        font-weight: 900;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .ampersand-suma {
+        left: 21.5%;
+    }
+
+    .cont-suma label {
+        font-size: 13px;
+        font-weight: 900;
+    }
+    
+    .cont-suma input {
+        width: 170px;
+    }
+
+    .cont-suma button {
+        font-size: 10px;
+        font-weight: 900;
+    }
+
+    .ampersand-resta {
+        left: 21.5%;
+    }
+
+    .cont-resta label {
+        font-size: 13px;
+        font-weight: 900;
+    }
+    
+    .cont-resta input {
+        width: 170px;
+    }
+
+    .cont-resta button {
+        font-size: 10px;
+        font-weight: 900;
+    }
+
+    .ampersand-multiplicacion {
+        left: 21%;
+    }
+
+    .cont-multiplicacion label {
+        font-size: 13px;
+        font-weight: 900;
+    }
+    
+    .cont-multiplicacion input {
+        width: 170px;
+    }
+
+    .cont-multiplicacion button {
+        font-size: 10px;
+        font-weight: 900;
+    }
+
+    .ampersand-division {
+        left: 21.5%;
+    }
+
+    .cont-division label {
+        font-size: 13px;
+        font-weight: 900;
+    }
+    
+    .cont-division input {
+        width: 170px;
+    }
+
+    .cont-division button {
+        font-size: 10px;
+        font-weight: 900;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .arrow-rigth, .arrow-left {
+        font-size: 60px;
+    }
+
+    .ampersand-suma {
+        left: 21%;
+    }    
+
+    .cont-suma img {
+        width: 25px;
+    }
+
+    .cont-suma label {
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+    .cont-suma input {
+        width: 150px;
+    }
+
+    .cont-suma button {
+        font-size: 10px;
+        font-weight: 900;
+    }
+
+    .ampersand-resta {
+        left: 21%;
+    }    
+
+    .cont-resta img {
+        width: 25px;
+    }
+
+    .cont-resta label {
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+    .cont-resta input {
+        width: 150px;
+    }
+
+    .cont-resta button {
+        font-size: 10px;
+    }
+
+    .ampersand-multiplicacion {
+        left: 20.5%;
+    }    
+
+    .cont-multiplicacion img {
+        width: 25px;
+    }
+
+    .cont-multiplicacion label {
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+    .cont-multiplicacion input {
+        width: 150px;
+    }
+
+    .cont-multiplicacion button {
+        font-size: 10px;
+        font-weight: 900;
+    }
+
+    .ampersand-division {
+        left: 21%;
+    }    
+
+    .cont-division img {
+        width: 25px;
+    }
+
+    .cont-division label {
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+    .cont-division input {
+        width: 150px;
+    }
+
+    .cont-division button {
+        font-size: 10px;
+    }
+}
+
+/*Estilo 2*/
+
+@media (max-width: 750px) {
+    .main {
+        width: 100%;
+        height: 100vh;
+        border: none;
+        border-radius: 0px;
+    }
+
+    .container-note {
+        display: none;
+    }
+
+    .cont-configuration {
+        transform: translateY(-1000px);
+    }
+
+    .ampersand-suma, .ampersand-resta, .ampersand-multiplicacion, .ampersand-division {
+        bottom: 42%;
+        left: 22.1%;
+    }
+
+    .cont-suma img, .cont-resta img, .cont-multiplicacion img, .cont-division img {
+        width: 40px;
+    }
+
+    .cont-suma label, .cont-resta label, .cont-multiplicacion label, .cont-division label {
+        text-align: center;
+        font-size: 20px;
+        width: 200px;
+    }
+
+    .cont-suma input, .cont-resta input, .cont-multiplicacion input, .cont-division input {
+        width: 220px;
+        justify-self: center;
+    }
+
+    .cont-suma button, .cont-resta button, .cont-multiplicacion button, .cont-division button {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .ampersand-suma, .ampersand-resta, .ampersand-multiplicacion, .ampersand-division {
+        bottom: 42%;
+        left: 22.1%;
+    }
+
+    .cont-suma img, .cont-resta img, .cont-multiplicacion img, .cont-division img {
+        width: 35px;
+    }
+
+    .cont-suma label, .cont-resta label, .cont-multiplicacion label, .cont-division label {
+        text-align: center;
+        font-size: 17px;
+        width: 150px;
+    }
+
+    .cont-suma input, .cont-resta input, .cont-multiplicacion input, .cont-division input {
+        width: 190px;
+        justify-self: center;
+    }
+
+    .cont-suma button, .cont-resta button, .cont-multiplicacion button, .cont-division button {
+        font-size: 11.5px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .arrow-left, .arrow-rigth {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 560px) {
+    .ampersand-suma, .ampersand-resta, .ampersand-multiplicacion, .ampersand-division {
+        bottom: 42%;
+        left: 22.1%;
+    }
+
+    .cont-suma img, .cont-resta img, .cont-multiplicacion img, .cont-division img {
+        width: 30px;
+    }
+
+    .cont-suma label, .cont-resta label, .cont-multiplicacion label, .cont-division label {
+        text-align: center;
+        font-size: 15px;
+        width: 150px;
+    }
+
+    .cont-suma input, .cont-resta input, .cont-multiplicacion input, .cont-division input {
+        width: 170px;
+        justify-self: center;
+    }
+
+    .cont-suma button, .cont-resta button, .cont-multiplicacion button, .cont-division button {
+        font-size: 10px;
+    }
+}
+
+/*Estilo telefonos*/
+
+@media (max-width: 500px) {
+    .cont-suma, .cont-resta, .cont-multiplicacion, .cont-division, .cont-configuration, .cont-present {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 0px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .ampersand-suma, .ampersand-resta, .ampersand-multiplicacion, .ampersand-division {
+        top: 27.5%;
+        left: 47.5%;
+    }
+
+    #cont-suma__table1-img, #cont-resta__table1-img, #cont-multiplicacion__table1-img, #cont-division__table1-img  {
+        border: none;
+        border-radius: 0px;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        justify-self: start;
+        margin-right: 10px;
+        height: 130px;
+    }
+
+    .cont-suma__title, .cont-resta__title, .cont-multiplicacion__title, .cont-division__title{
+        margin-top: 30px;
+    }
+
+    #cont-suma__table2-img, #cont-resta__table2-img, #cont-multiplicacion__table2-img, #cont-division__table2-img {
+        grid-column: 3/4;
+        margin-left: 10px;
+        height: 130px;
+    }
+
+    .cont-suma__cont-form, .cont-resta__cont-form, .cont-multiplicacion__cont-form, .cont-division__cont-form {
+        grid-column:  1/5;
+        grid-row: 3/5;
+        align-self: flex-start;
+        margin-top: 30px;
+    }
+
+    .cont-suma label, .cont-suma input, .cont-suma button {
+        grid-column: 1/5;
+    }
+
+    .cont-resta label, .cont-resta input, .cont-resta button {
+        grid-column: 1/5;
+    }
+    
+    .cont-multiplicacion label, .cont-multiplicacion input, .cont-multiplicacion button {
+        grid-column: 1/5;
+    }
+
+    .cont-division label, .cont-division input, .cont-division button {
+        grid-column: 1/5;
+    }
+
+    .cont-suma label, .cont-resta label, .cont-multiplicacion label, .cont-division label {
+        width: 200px;
+        margin-bottom: 45px;
+    }
+
+    .cont-suma:hover {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cont-resta:hover {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cont-multiplicacion:hover {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cont-division:hover {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cont-present:hover {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cont-configuration:hover {
+        width: 100%;
+        height: 100%;
+    }
 }
